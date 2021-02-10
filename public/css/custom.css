@@ -2,14 +2,20 @@
 body {
     --color-text: #fff;
     --color-bg: #171717;
-    --color-link: #ff0000;
+    --color-link: #EA212E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     background-color: var(--color-bg);
 }
+button {
+    font-family: 'Roboto', sans-serif;
+}
 /* CURSOR CUSTOM */
-.page, .page a {
+.lbe_page, .lbe_page a {
     cursor: none;
 }
-.page {
+.lbe_page {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -17,18 +23,18 @@ body {
     justify-content: center;
     align-items: center;
 }
-.page__inner {
+.lbe_page-inner {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.cursor {
+.lbe_cursor {
     position: fixed;
     left: 0;
     top: 0;
     pointer-events: none;
 }
-.cursor--small {
+.lbe_cursor-small {
     width: 5px;
     height: 5px;
     left: -2.5px;
@@ -37,7 +43,7 @@ body {
     z-index: 11000;
     background: var(--color-text);
 }
-.cursor--canvas {
+.lbe_cursor-canvas {
     width: 100vw;
     height: 100vh;
     z-index: 12000;
@@ -70,7 +76,6 @@ body {
     line-height: 110px;
 }
 .lbe_une-title p:nth-child(2) {
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: 1px white;
@@ -175,49 +180,164 @@ body {
 .lbe_menu:hover span:nth-child(2) {
     width: 14px;
 }
-
-
-
-
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+.lbe_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.lbe_modal-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: white;
     padding: 80px;
     width: 80vw;
+    transform: translateX(0);
+    transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+.lbe_modal-company {
+
+}
+.lbe_modal-company img {
+    height: 40px;
+    margin-bottom: 45px;
+}
+.lbe_modal-company p {
+    opacity: .5;
+    font-weight: 300;
+    line-height: 20px;
+}
+.lbe_modal-menu {
+	position: relative;
+	z-index: 10;
+}
+.lbe_menu-item {
+	position: relative;
+	display: block;
+	outline: none;
+	margin: 0 0 1.5em;
+	line-height: 1;
+    color: #272727;
+}
+.lbe_menu-item_entry {
+    position: relative;
+	display: inline-block;
+	font-size: 18px;
+    padding: 0 0.35em;
+	line-height: 1.4;
+	transition: color 0.5s;
+	transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+.lbe_menu-item_entry::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 50%;
+	left: 0;
+	bottom: 0;
+	opacity: 0.3;
+	transform: scale3d(0,1,1);
+	transform-origin: 0% 50%;
+	transition: transform 0.5s;
+	transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    background: #EA212E;
+}
+.lbe_menu-item:hover,
+.lbe_menu-item:focus {
+	color: #EA212E;
+}
+.lbe_menu-item:hover .lbe_menu-item_entry::before,
+.lbe_menu-item:focus .lbe_menu-item_entry::before {
+	transform: scale3d(1,1,1);
+}
+.lbe_close {
+    position: relative;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
+    justify-content: center;
+    cursor: pointer;
+}
+.lbe_close p {
+    color: var(--color-link);
+    font-family: Helvetica, Arial, sans-serif; 
+    font-size: .6em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .3s ease-in;
+    opacity: 0;
+    position: absolute;
+    right: 50px;
+    top: 17px;
+    position: absolute;
+    right: 50px;
+    top: 17px;
+}
+.lbe_close:hover .lbe_close-bar1 {
+    transform: rotate(-45deg);
+    background-color: var(--color-link);
+}
+.lbe_close:hover .lbe_close-bar2 {
+    transform: rotate(45deg);
+    background-color: var(--color-link);
+}
+.lbe_close:hover p {
+    opacity: 1;
+}
+.lbe_close-bar1 {
+    height: 1px;
+    width: 25px;
+    position: absolute;
+    background-color: black;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+}
+.lbe_close-bar2 {
+    height: 1px;
+    width: 25px;
+    position: absolute;
+    background-color: black;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.close:hover,
+.close:focus {
+    color: red;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+
+
+
+
+
+
 
 
 .scroll-down {
