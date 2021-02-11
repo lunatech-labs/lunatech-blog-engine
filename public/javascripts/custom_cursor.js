@@ -48,7 +48,7 @@ const initCanvas = () => {
   
   // we'll need these later for the noisy circle
   const noiseScale = 150; // speed
-  const noiseRange = 4; // range of distortion
+  const noiseRange = 2; // range of distortion
   let isNoisy = false; // state
   
   // the base shape for the noisy circle
