@@ -3,6 +3,8 @@
 
 @main(id = "blog", title = Some("Lunatech's engineer blog"), extracss = None, headerImage = Some(headerImageUrl)) {
 }{    
+    
+    
     @posts.map { post =>
         <article class="lbe_article-overview">
             <a class="lbe_article-overview_content" href="@post.slug">
@@ -10,6 +12,7 @@
                 <p>@post.publicationDate.toString("dd MMM yyyy")</p>
                 <p>By @post.author.map(_.name.getOrElse(post.authorName)).getOrElse(post.authorName)</p>
             </a>
+            
             <div class="lbe_article-overview_tag">@post.tags.getOrElse(Array.empty).map{ tag => <a href="@routes.HomeController.byTags(tag)">@tag</a>}</div>
             <img class="lbe_article-img" src="@post.mainImage" onerror="imgError(this)" alt=""/>
             <div class="lbe_article-overview_border"></div>
@@ -22,7 +25,7 @@
     <div class="row" id="content">  
         @if(!(blogsPerPage == -1)){
             <div class="row">
-                <div style="padding-top: 20px;padding-bottom: 20px;display: block;margin:auto;">
+                <div>
                     <button id="load" class="btn btn-custom3">Load more</button>
                 </div>
             </div>
