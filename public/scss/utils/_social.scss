@@ -1,0 +1,18 @@
+.lbe_social {
+    display: flex;
+    align-items: center;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: white;
+        margin-right: 10px;
+        &:last-child {margin-right: 0;}
+        &:hover {
+            svg {color: var(--color-link);}
+        }
+        svg {font-size: 18px;}
+    }
+}

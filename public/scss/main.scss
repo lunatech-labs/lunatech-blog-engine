@@ -1,0 +1,21 @@
+// Commons imports
+// -------
+// Base partials
+@import "utils/reset";
+@import "utils/variables.scss";
+@import "utils/general.scss";
+
+// Layour partials
+@import "utils/footer.scss";
+
+// Components partials
+@import "utils/logo.scss";
+@import "utils/social.scss";
+@import "utils/buttons.scss";
+@import "utils/form.scss";
+
+// Part page partials
+@import "utils/cover.scss";
+@import "utils/cursor.scss";
+@import "utils/modal.scss";
+@import "utils/articles-overview.scss";

@@ -12,8 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght300;400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/reset.css")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/custom.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
 
         <link rel="alternate" type="application/rss+xml" title="Lunatech Blog » Feed" href="https://blog.lunatech.com/feed/">
     </head>
@@ -74,8 +73,8 @@
                 
                     <div class="lbe_close lbe_cursor-anim">
                         <p>close</p>
-                        <div class="lbe_close-bar1"></div>
-                        <div class="lbe_close-bar2"></div> 
+                        <div class="lbe_close-bar lbe_close-bar1"></div>
+                        <div class="lbe_close-bar lbe_close-bar2"></div> 
                     </div>
 
                 </div>
@@ -92,62 +91,67 @@
 
         <!-- Footer -->
         <footer>
-            <!-- Logo -->
-            <a class="lbe_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
+            <div>
+                <!-- Logo -->
+                <a class="lbe_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
 
-            <div class="lbe_footer-address">
-                <div class="lbe_footer-address_part">  
-                    <div class="lbe_footer-address_country">
-                        <h3>Lunatech NL</h3>
-                        <div>
-                            <p>Amsterdam</p>
-                            <p>Van Leijenberghlaan 197<br /><span>1082 EA Amstedam,<br />The Netherlands</span></p>
+                <!-- Address -->
+                <div class="lbe_footer-address">
+                    <div class="lbe_footer-address_part">  
+                        <div class="lbe_footer-address_country">
+                            <h3>Lunatech NL</h3>
+                            <div>
+                                <p>Amsterdam</p>
+                                <p>Van Leijenberghlaan 197<br /><span>1082 EA Amstedam,<br />The Netherlands</span></p>
+                            </div>
+                        </div>
+                        <div class="lbe_footer-address_country">
+                            <div>
+                                <p>Rotterdam</p>
+                                <p>Hofplein 20<br /><span>3032 AC Rotterdam,<br />The Netherlands</span></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="lbe_footer-address_country">
-                        <div>
-                            <p>Rotterdam</p>
-                            <p>Hofplein 20<br /><span>3032 AC Rotterdam,<br />The Netherlands</span></p>
+                    <div class="lbe_footer-address_part">
+                        <div class="lbe_footer-address_country">
+                            <h3>Lunatech FR</h3>
+                            <div>
+                                <p>Paris</p>
+                                <p>3 Rue de la Galmy<br /><span>77700 Chessy,<br />France</span></p>
+                            </div>
+                        </div>
+                        <div class="lbe_footer-address_country">
+                            <h3>Lunatech BE</h3>
+                            <div>
+                                <p>Brussels</p>
+                                <p>Avenue Louise 54<br /><span>1050 Brussels,<br />Belgium</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="lbe_footer-address_part">
-                    <div class="lbe_footer-address_country">
-                        <h3>Lunatech FR</h3>
-                        <div>
-                            <p>Paris</p>
-                            <p>3 Rue de la Galmy<br /><span>77700 Chessy,<br />France</span></p>
-                        </div>
-                    </div>
-                    <div class="lbe_footer-address_country">
-                        <h3>Lunatech BE</h3>
-                        <div>
-                            <p>Brussels</p>
-                            <p>Avenue Louise 54<br /><span>1050 Brussels,<br />Belgium</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lbe_footer-follow">
-                <h3>Follow us</h3>
-                <form class="lbe_footer-" action="https://lunatech.us6.list-manage.com/subscribe/post?u=cf40d3fd9a5ebdb6782320c8d&amp;id=5af5a45e75" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-                    <i class="far fa-envelope-open i-nl"></i>
-                    <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL" placeholder="Enter email">
-                    <button type="submit" class="" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Register</button>
-                </form>
-
-
-
-
-
-                <div class="col-md-12">
-                    <p class="footer-reserved">2021 © Lunatech</p>
-                </div> 
-            </div>
-
             
-                
+                <div>
+                    <!-- Follow -->
+                    <div class="lbe_footer-follow">
+                        <h3>Follow us</h3>
+                        <form action="https://lunatech.us6.list-manage.com/subscribe/post?u=cf40d3fd9a5ebdb6782320c8d&amp;id=5af5a45e75" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                            <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL" placeholder="Enter email">
+                            <button class="lbe_primary-btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Register</button>
+                        </form>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="lbe_social">
+                        <a href="https://twitter.com/lunatechlabs" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
+                        <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lbe_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
+                        <a href="https://github.com/lunatech-labs" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
+                        <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>2021 © Lunatech</p>
+            </div>
         </footer>
 
         <script>
@@ -188,3 +192,15 @@
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/menu_modal.js")""></script>
     </body>
 </html>
+
+
+
+<!--
+<div class="col-md-12">
+    <p class="footer-reserved">2021 © Lunatech</p>
+</div> 
+-->
+
+
+
+
