@@ -1,21 +1,23 @@
 // Commons imports
 // -------
 // Base partials
+
 @import "utils/reset";
-@import "utils/variables.scss";
-@import "utils/general.scss";
+@import "utils/variables";
+@import "utils/fonts";
+@import "utils/general";
 
 // Layour partials
-@import "utils/footer.scss";
+@import "utils/footer";
 
 // Components partials
-@import "utils/logo.scss";
-@import "utils/social.scss";
-@import "utils/buttons.scss";
-@import "utils/form.scss";
+@import "utils/logo";
+@import "utils/social";
+@import "utils/buttons";
+@import "utils/form";
+@import "utils/cursor";
+@import "utils/modal";
 
 // Part page partials
-@import "utils/cover.scss";
-@import "utils/cursor.scss";
-@import "utils/modal.scss";
-@import "utils/articles-overview.scss";
+@import "utils/cover";
+@import "utils/articles-grid";

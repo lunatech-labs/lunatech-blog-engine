@@ -1,67 +1,75 @@
+/* -------------- GENERAL -------------- */
 footer {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-    background: black;
+    background: $lb_lightGray;
     color: white;
     padding: 80px;
-    border-top: 4px solid var(--color-link);
-    > div:first-child {
-        grid-template-columns: 1fr 2fr 1fr;
-        display: grid;
-    }
-    > div:nth-child(2) {
-        
-    }
-    h3 {
-        text-transform: uppercase;
-        font-size: 18px;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-    }
-    .lbe_footer-address {
+    border-top: 2px solid $lb_lightRed;
+}
+/* -------------- LAYOUT -------------- */
+.lb_footer-top {
+    grid-template-columns: 1fr 2fr 1fr;
+    display: grid;
+}
+.lb_footer-bottom {
+    border-top: 1px solid rgba(150, 150, 150, .25);
+    padding: 40px 0;
+}
+/* -------------- COMPONENTS -------------- */
+.lb_baseline {
+    margin-top: 30px;
+    opacity: $lb_opacity;
+}
+.lb_address {
+    display: flex;
+    flex-direction: column;
+    .lb_address-part {
         display: flex;
-        flex-direction: column;
-        .lbe_footer-address_part {
-            display: flex;
-            align-items: flex-end;
-            &:first-child {
-                margin-bottom: 60px;
+        align-items: flex-end;
+        &:first-child {
+            margin-bottom: 60px;
+        }
+        .lb_address-country {
+            margin-bottom: 30px;
+            width: 50%;
+            h3 {
+                text-transform: uppercase;
+                font-size: 18px;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
             }
-            .lbe_footer-address_country {
-                margin-bottom: 30px;
-                width: 50%;
-                div {
-                    p {
-                        &:first-child {
-                            font-size: 18px;
-                            margin-bottom: 10px;
-                        }
-                        &:nth-child(2) {
-                            font-size: 16px;
-                            font-weight: 300;
-                            line-height: 22px;
-                            span {
-                                text-transform: uppercase;
-                            }
+            div {
+                p {
+                    &:first-child {
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                    }
+                    &:nth-child(2) {
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 22px;
+                        span {
+                            text-transform: uppercase;
+>>>>>>> Stashed changes
                         }
                     }
                 }
             }
         }
     }
-    .lbe_footer-follow {
-        margin-bottom: 30px;
-        form {
-            display: flex;
-            align-items: center;
-            input {
-                height: 40px;
-                border-radius: 0;
-                border: none;
-                width: 100%;
-                margin-right: 8px;
-            }
+}
+.lb_follow {
+    margin-bottom: 30px;
+    form {
+        display: flex;
+        align-items: center;
+        input {
+            height: 40px;
+            border-radius: 0;
+            border: none;
+            width: 100%;
+            margin-right: 8px;
         }
     }
 }

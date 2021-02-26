@@ -1,4 +1,5 @@
-.lbe_une {
+/* -------------- GENERAL -------------- */
+.lb_une {
     background: url("../images/background.jpg") black;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,7 +12,7 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    .lbe_une-title {
+    .lb_une-title {
         p {
             &:first-child {
                 font-family: 'Bebas Neue', cursive;
@@ -27,123 +28,125 @@
                 text-transform: uppercase;
                 margin-top: -15px;
                 margin-left: -5px;
+                line-height: 170px;
             }
         }
     }
-    .lbe_text-ban {
-        transform: rotate(-90deg) translate(-50%, 100%);
-        position: absolute;
-        left: calc(100vw - 340px);
-        bottom: 0;
-        white-space: nowrap;
-        transform-origin: left bottom;
-        height: 100px;
+}
+/* -------------- COMPONENTS -------------- */
+.lb_text-ban {
+    transform: rotate(-90deg) translate(-50%, 100%);
+    position: absolute;
+    left: calc(100vw - 340px);
+    bottom: 0;
+    white-space: nowrap;
+    transform-origin: left bottom;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    opacity: .5;
+    .lb_text-ban-animation {
         display: flex;
-        align-items: center;
-        opacity: .5;
-        .lbe_text-ban-animation {
-            display: flex;
-            animation: slideLeft 40s infinite linear reverse;
-            p {
-                font-family: 'Bebas Neue', cursive;
-                font-size: 94px;
-                margin-right: 15px;
-                color: white;
-                &:nth-child(even) {
+        animation: slideLeft 40s infinite linear reverse;
+        p {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 94px;
+            margin-right: 15px;
+            color: white;
+            &:nth-child(even) {
+                color: transparent;
+                -webkit-text-stroke: 1px white;
+                span {
+                    color: white;
+                    -webkit-text-stroke: none;
+                }
+            }
+            &:nth-child(odd) {
+                span {
                     color: transparent;
                     -webkit-text-stroke: 1px white;
-                    span {
-                        color: white;
-                        -webkit-text-stroke: none;
-                    }
-                }
-                &:nth-child(odd) {
-                    span {
-                        color: transparent;
-                        -webkit-text-stroke: 1px white;
-                    }
                 }
             }
-        } 
-    }
-    .lbe_menu {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding: 8px;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        right: 80px;
-        &:hover {
-            span:first-child {width: 24px;}
-            span:nth-child(2) {width: 14px;}
-            span:first-child, span:nth-child(2) {
-                transform: translateX(-5px);
-                background: var(--color-link);
-            }
         }
-        span {
-            &:first-child {
-                display: block;
-                background: white;
-                height: 1px;
-                width: 14px;
-                transition: all .7s ease;
-            }
-            &:nth-child(2) {
-                display: block;
-                background: white;
-                height: 1px;
-                width: 24px;
-                margin-top: 10px;
-                transition: all .7s ease;
-            }
+    } 
+}
+.lb_menu {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 8px;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    &:hover {
+        span:first-child {width: 24px;}
+        span:nth-child(2) {width: 14px;}
+        span:first-child, span:nth-child(2) {
+            transform: translateX(-5px);
+            background: $lb_lightRed;
         }
     }
-    .lbe_scroll-down {
-        position: absolute;
-        bottom: 80px;
-        left: 50%;
-        margin-left: -20px;
-        width: 40px;
-        height: 40px;
-        -webkit-animation: bounce 2s infinite 2s;
-        animation: bounce 2s infinite 2s;
-        -webkit-transition: all .2s ease-in;
-        transition: all 0.2s ease 0.05s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:hover {
-            span {
-                &:first-child {border-color: var(--color-link);}
-                &:nth-child(2) {background: var(--color-link);}
-            }
+    span {
+        &:first-child {
+            display: block;
+            background: white;
+            height: 1px;
+            width: 14px;
+            transition: all .7s ease;
         }
+        &:nth-child(2) {
+            display: block;
+            background: white;
+            height: 1px;
+            width: 24px;
+            margin-top: 10px;
+            transition: all .7s ease;
+        }
+    }
+}
+.lb_scroll-down {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: bounce 2s infinite 2s;
+    animation: bounce 2s infinite 2s;
+    -webkit-transition: all .2s ease-in;
+    transition: all 0.2s ease 0.05s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
         span {
-            &:first-child {
-                transform: rotate(-45deg);
-                display: block;
-                width: 15px;
-                height: 15px;
-                content: "";
-                border: 1px solid white;
-                border-width: 0px 0 1px 1px;
-                transition: all .7s ease;
-            }
-            &:nth-child(2) {
-                position: absolute;
-                height: 20px;
-                width: 1px;
-                display: block;
-                background: white;
-                margin-top: -2px;
-                margin-left: 1px;
-                transition: all .7s ease;
-            }
+            &:first-child {border-color: $lb_lightRed;}
+            &:nth-child(2) {background: $lb_lightRed;}
+        }
+    }
+    span {
+        &:first-child {
+            transform: rotate(-45deg);
+            display: block;
+            width: 15px;
+            height: 15px;
+            content: "";
+            border: 1px solid white;
+            border-width: 0px 0 1px 1px;
+            transition: all .7s ease;
+        }
+        &:nth-child(2) {
+            position: absolute;
+            height: 20px;
+            width: 1px;
+            display: block;
+            background: white;
+            margin-top: -2px;
+            margin-left: 1px;
+            transition: all .7s ease;
         }
     }
 }

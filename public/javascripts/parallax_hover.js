@@ -1,4 +1,4 @@
-jQuery(".lbe_article-overview").mousemove(
+jQuery(".lb_article-grid").mousemove(
     function(e){
   
         var offset = jQuery(this).offset();

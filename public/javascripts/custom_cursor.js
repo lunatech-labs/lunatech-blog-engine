@@ -1,7 +1,7 @@
 // set the starting position of the cursor outside of the screen
 let clientX = -100;
 let clientY = -100;
-const innerCursor = document.querySelector(".lbe_cursor-small");
+const innerCursor = document.querySelector(".lb_cursor-small");
 
 const initCursor = () => {
   // add listener to track the current mouse position
@@ -35,7 +35,7 @@ let showCursor = false;
 let group, stuckX, stuckY, fillOuterCursor;
 
 const initCanvas = () => {
-  const canvas = document.querySelector(".lbe_cursor-canvas");
+  const canvas = document.querySelector(".lb_cursor-canvas");
   const shapeBounds = {
     width: 75,
     height: 75
@@ -107,7 +107,7 @@ const initCanvas = () => {
     };
     
     // add event listeners to all items
-    const linkItems = document.querySelectorAll(".lbe_cursor-anim");
+    const linkItems = document.querySelectorAll(".lb_cursor-anim");
     linkItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnter);
       item.addEventListener("mouseleave", handleMouseLeave);

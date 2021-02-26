@@ -8,45 +8,49 @@
         <title>@title.map(txt => s"$txt")</title>
         @extraHeader.map(metaContent => Html(metaContent)).getOrElse("")
         <link rel="shortcut icon" type="image/x-icon" href="@routes.Assets.versioned("images/favicon.ico")">
+<<<<<<< Updated upstream
 
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght300;400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
 
+=======
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
+>>>>>>> Stashed changes
         <link rel="alternate" type="application/rss+xml" title="Lunatech Blog » Feed" href="https://blog.lunatech.com/feed/">
     </head>
     <body>
         <!-- Custom cursor -->
-        <div class="lbe_page">
-            <div class="lbe_page-inner">
-              <div class="lbe_cursor lbe_cursor-small"></div>
-              <canvas class="lbe_cursor lbe_cursor-canvas" resize></canvas>
+        <div class="lb_page">
+            <div class="lb_page-inner">
+              <div class="lb_cursor lb_cursor-small"></div>
+              <canvas class="lb_cursor lb_cursor-canvas" resize></canvas>
             </div>
         </div>
 
         <!-- Une screen -->
-        <div class="lbe_une">
+        <div class="lb_une">
             <!-- Logo -->
-            <a class="lbe_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
+            <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
 
             <!-- Title -->
-            <div class="lbe_une-title">
+            <div class="lb_une-title">
                 <p>Lunatech's<br />engineer</p>
                 <p>Blog</p>
             </div>
 
             <!-- Social -->
-            <div class="lbe_social">
-                <a href="https://twitter.com/lunatechlabs" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
-                <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lbe_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
-                <a href="https://github.com/lunatech-labs" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
-                <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
+            <div class="lb_social">
+                <a href="https://twitter.com/lunatechlabs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
+                <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lb_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
+                <a href="https://github.com/lunatech-labs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
+                <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
             </div>
 
             <!-- Text bannière -->
-            <div class="lbe_text-ban">
-                <div class="lbe_text-ban-animation">
+            <div class="lb_text-ban">
+                <div class="lb_text-ban-animation">
                     <p>Lunatech<span>'</span>s engineer blog</p>
                     <p>Lunatech's engineer blog</p>
                     <p>Lunatech<span>'</span>s engineer blog</p>
@@ -55,42 +59,48 @@
             </div>
 
             <!-- Menu -->
-            <button type="button" id="myBtn" class="lbe_menu lbe_cursor-anim"><span></span><span></span></button>
+            <button type="button" id="myBtn" class="lb_menu lb_cursor-anim"><span></span><span></span></button>
 
             <!-- Menu modal -->
-            <div id="myModal" class="lbe_modal">
+            <div id="myModal" class="lb_modal">
                 <!-- Modal content -->
-                <div class="lbe_modal-content">
-                    <div class="lbe_modal-company">
+                <div class="lb_modal-content">
+                    <div class="lb_modal-company">
                         <img src="@routes.Assets.versioned("images/lunatech-logo-black.svg")">
                         <p>Lunatech is an IT development<br />& consulting company</p>
                     </div>
-                    <nav class="lbe_modal-menu">
-                        <a class="lbe_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lbe_menu-item_entry">Netherlands</span></a>
-                        <a class="lbe_menu-item" href="https://lunatech.be/" target="_blank"><span class="lbe_menu-item_entry">Belgium</span></a>
-                        <a class="lbe_menu-item" href="https://lunatech.fr/" target="_blank"><span class="lbe_menu-item_entry">France</span></a>
+                    <nav class="lb_modal-menu">
+                        <a class="lb_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lb_menu-item_entry">Netherlands</span></a>
+                        <a class="lb_menu-item" href="https://lunatech.be/" target="_blank"><span class="lb_menu-item_entry">Belgium</span></a>
+                        <a class="lb_menu-item" href="https://lunatech.fr/" target="_blank"><span class="lb_menu-item_entry">France</span></a>
                     </nav>
                 
-                    <div class="lbe_close lbe_cursor-anim">
+                    <div class="lb_close lb_cursor-anim">
                         <p>close</p>
+<<<<<<< Updated upstream
                         <div class="lbe_close-bar lbe_close-bar1"></div>
                         <div class="lbe_close-bar lbe_close-bar2"></div> 
+=======
+                        <div class="lb_close-bar lb_close-bar1"></div>
+                        <div class="lb_close-bar lb_close-bar2"></div> 
+>>>>>>> Stashed changes
                     </div>
 
                 </div>
             </div>
 
             <!-- Btn scroll down -->
-            <a class="lbe_scroll-down lbe_cursor-anim" href="#target" address="true"><span></span><span></span></a>
+            <a class="lb_scroll-down lb_cursor-anim" href="#target" address="true"><span></span><span></span></a>
         </div>
 
         <!-- Posts list -->
-        <main class="lbe_article-overview_list" id="target">
+        <main id="target">
             @content
         </main>
 
         <!-- Footer -->
         <footer>
+<<<<<<< Updated upstream
             <div>
                 <!-- Logo -->
                 <a class="lbe_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
@@ -99,28 +109,54 @@
                 <div class="lbe_footer-address">
                     <div class="lbe_footer-address_part">  
                         <div class="lbe_footer-address_country">
+=======
+            <div class="lb_footer-top">
+                <!-- Logo + baseline -->
+                <div>
+                    <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
+                    <p class="lb_baseline">Lunatech is an IT development & consulting company with offices in Netherlands, Belgium and France.</p>
+                </div>
+    
+                <!-- Address -->
+                <div class="lb_address">
+                    <div class="lb_address-part">  
+                        <div class="lb_address-country">
+>>>>>>> Stashed changes
                             <h3>Lunatech NL</h3>
                             <div>
                                 <p>Amsterdam</p>
                                 <p>Van Leijenberghlaan 197<br /><span>1082 EA Amstedam,<br />The Netherlands</span></p>
                             </div>
                         </div>
+<<<<<<< Updated upstream
                         <div class="lbe_footer-address_country">
+=======
+                        <div class="lb_address-country">
+>>>>>>> Stashed changes
                             <div>
                                 <p>Rotterdam</p>
                                 <p>Hofplein 20<br /><span>3032 AC Rotterdam,<br />The Netherlands</span></p>
                             </div>
                         </div>
                     </div>
+<<<<<<< Updated upstream
                     <div class="lbe_footer-address_part">
                         <div class="lbe_footer-address_country">
+=======
+                    <div class="lb_address-part">
+                        <div class="lb_address-country">
+>>>>>>> Stashed changes
                             <h3>Lunatech FR</h3>
                             <div>
                                 <p>Paris</p>
                                 <p>3 Rue de la Galmy<br /><span>77700 Chessy,<br />France</span></p>
                             </div>
                         </div>
+<<<<<<< Updated upstream
                         <div class="lbe_footer-address_country">
+=======
+                        <div class="lb_address-country">
+>>>>>>> Stashed changes
                             <h3>Lunatech BE</h3>
                             <div>
                                 <p>Brussels</p>
@@ -132,15 +168,24 @@
             
                 <div>
                     <!-- Follow -->
+<<<<<<< Updated upstream
                     <div class="lbe_footer-follow">
                         <h3>Follow us</h3>
                         <form action="https://lunatech.us6.list-manage.com/subscribe/post?u=cf40d3fd9a5ebdb6782320c8d&amp;id=5af5a45e75" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                             <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL" placeholder="Enter email">
                             <button class="lbe_primary-btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Register</button>
+=======
+                    <div class="lb_follow">
+                        <h3>Follow us</h3>
+                        <form action="https://lunatech.us6.list-manage.com/subscribe/post?u=cf40d3fd9a5ebdb6782320c8d&amp;id=5af5a45e75" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                            <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL" placeholder="Enter email">
+                            <button class="lb_btn lb_primary-btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Register</button>
+>>>>>>> Stashed changes
                         </form>
                     </div>
 
                     <!-- Social -->
+<<<<<<< Updated upstream
                     <div class="lbe_social">
                         <a href="https://twitter.com/lunatechlabs" target="_blank" class="lbe_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
                         <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lbe_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
@@ -150,6 +195,17 @@
                 </div>
             </div>
             <div>
+=======
+                    <div class="lb_social">
+                        <a href="https://twitter.com/lunatechlabs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
+                        <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lb_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
+                        <a href="https://github.com/lunatech-labs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
+                        <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="lb_footer-bottom">
+>>>>>>> Stashed changes
                 <p>2021 © Lunatech</p>
             </div>
         </footer>

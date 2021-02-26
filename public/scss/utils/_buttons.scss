@@ -1,20 +1,30 @@
-button {
-    font-family: 'Roboto', sans-serif;
-}
-.lbe_primary-btn {
+/* -------------- GENERAL -------------- */
+.lb_btn {
     height: 40px;
     padding: 0 20px;
-    background: $lbe_lightRed;
-    color: white;
     letter-spacing: 4px;
     font-size: 10px;
     text-transform: uppercase;
-    border: 2px solid $lbe_lightRed;
     cursor: pointer;
+}
+.lb_primary-btn {
+    background: $lb_lightRed;
+    color: $lb_white;
+    border: 2px solid $lb_lightRed;
+    &:hover {
+        background: $lb_darkRed;
+        color: $lb_white;
+        border: 2px solid $lb_darkRed;
+    }
+}
+.lb_secondary-btn {
+    background: transparent;
+    color: $lb_lightRed;
+    border: 2px solid $lb_lightRed;
     &:hover {
         background: transparent;
-        color: $lbe_darkRed;
-        border: 2px solid $lbe_darkRed;
+        color: $lb_darkRed;
+        border: 2px solid $lb_darkRed;
     }
-  }
+}
   
