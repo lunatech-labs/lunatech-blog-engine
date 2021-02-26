@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-.lbe_social {
-=======
 /* -------------- GENERAL -------------- */
 .lb_social {
->>>>>>> Stashed changes
     display: flex;
     align-items: center;
     a {
@@ -16,11 +12,7 @@
         margin-right: 10px;
         &:last-child {margin-right: 0;}
         &:hover {
-<<<<<<< Updated upstream
-            svg {color: var(--color-link);}
-=======
             svg {color: $lb_lightRed;}
->>>>>>> Stashed changes
         }
         svg {font-size: 18px;}
     }
