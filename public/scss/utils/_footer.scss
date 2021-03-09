@@ -9,8 +9,9 @@ footer {
 }
 /* -------------- LAYOUT -------------- */
 .lb_footer-top {
-    grid-template-columns: 1fr 2fr 1fr;
     display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-column-gap: 30px;
 }
 .lb_footer-bottom {
     border-top: 1px solid rgba(150, 150, 150, .25);

@@ -8,16 +8,7 @@
         <title>@title.map(txt => s"$txt")</title>
         @extraHeader.map(metaContent => Html(metaContent)).getOrElse("")
         <link rel="shortcut icon" type="image/x-icon" href="@routes.Assets.versioned("images/favicon.ico")">
-<<<<<<< Updated upstream
-
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght300;400;500;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
-
-=======
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
->>>>>>> Stashed changes
         <link rel="alternate" type="application/rss+xml" title="Lunatech Blog » Feed" href="https://blog.lunatech.com/feed/">
     </head>
     <body>
@@ -31,8 +22,32 @@
 
         <!-- Une screen -->
         <div class="lb_une">
-            <!-- Logo -->
-            <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
+            <!-- Menu + logo -->
+            <div class="lb_une-header">
+                <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
+
+                <button type="button" id="myBtn" class="lb_menu lb_cursor-anim"><span></span><span></span></button>
+
+                <div id="myModal" class="lb_modal">
+                    <div class="lb_modal-content">
+                        <div class="lb_modal-company">
+                            <img src="@routes.Assets.versioned("images/lunatech-logo-black.svg")">
+                            <p>Lunatech is an IT development<br />& consulting company</p>
+                        </div>
+                        <nav class="lb_modal-menu">
+                            <a class="lb_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lb_menu-item_entry">Netherlands</span></a>
+                            <a class="lb_menu-item" href="https://lunatech.be/" target="_blank"><span class="lb_menu-item_entry">Belgium</span></a>
+                            <a class="lb_menu-item" href="https://lunatech.fr/" target="_blank"><span class="lb_menu-item_entry">France</span></a>
+                        </nav>
+                    
+                        <div class="lb_close lb_cursor-anim">
+                            <p>close</p>
+                            <div class="lb_close-bar lb_close-bar1"></div>
+                            <div class="lb_close-bar lb_close-bar2"></div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Title -->
             <div class="lb_une-title">
@@ -48,43 +63,23 @@
                 <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
             </div>
 
-            <!-- Text bannière -->
-            <div class="lb_text-ban">
-                <div class="lb_text-ban-animation">
-                    <p>Lunatech<span>'</span>s engineer blog</p>
-                    <p>Lunatech's engineer blog</p>
-                    <p>Lunatech<span>'</span>s engineer blog</p>
-                    <p>Lunatech's engineer blog</p>
-                </div>
-            </div>
-
-            <!-- Menu -->
-            <button type="button" id="myBtn" class="lb_menu lb_cursor-anim"><span></span><span></span></button>
-
-            <!-- Menu modal -->
-            <div id="myModal" class="lb_modal">
-                <!-- Modal content -->
-                <div class="lb_modal-content">
-                    <div class="lb_modal-company">
-                        <img src="@routes.Assets.versioned("images/lunatech-logo-black.svg")">
-                        <p>Lunatech is an IT development<br />& consulting company</p>
+            <!-- IMG background -->
+            <div class="lb_une-background1"></div>
+            <div class="lb_une-background2">
+                <div class="lb_text-ban">
+                    <div class="lb_text-ban-animation">
+                        <p>Lunatech<span>'</span>s engineer blog</p>
+                        <p>Lunatech's engineer blog</p>
+                        <p>Lunatech<span>'</span>s engineer blog</p>
+                        <p>Lunatech's engineer blog</p>
                     </div>
-                    <nav class="lb_modal-menu">
-                        <a class="lb_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lb_menu-item_entry">Netherlands</span></a>
-                        <a class="lb_menu-item" href="https://lunatech.be/" target="_blank"><span class="lb_menu-item_entry">Belgium</span></a>
-                        <a class="lb_menu-item" href="https://lunatech.fr/" target="_blank"><span class="lb_menu-item_entry">France</span></a>
-                    </nav>
-                
-                    <div class="lb_close lb_cursor-anim">
-                        <p>close</p>
-                        <div class="lb_close-bar lb_close-bar1"></div>
-                        <div class="lb_close-bar lb_close-bar2"></div> 
-                    </div>
-
-                </div>
+                </div> 
+                <div class="lb_border-grid"></div>
+                <div class="lb_border-grid"></div>
             </div>
+            <div class="lb_une-background3"></div>
 
-            <!-- Btn scroll down -->
+            <!-- Scroll down -->
             <a class="lb_scroll-down lb_cursor-anim" href="#target" address="true"><span></span><span></span></a>
         </div>
 
