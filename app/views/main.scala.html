@@ -26,13 +26,16 @@
             <div class="lb_une-header">
                 <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
 
-                <button type="button" id="myBtn" class="lb_menu lb_cursor-anim"><span></span><span></span></button>
+                <button type="button" id="myBtn" class="lb_menu lb_cursor-anim">
+                    <span class="lb_menu-bar"></span>
+                    <span class="lb_menu-bar"></span>
+                </button>
 
                 <div id="myModal" class="lb_modal">
                     <div class="lb_modal-content">
                         <div class="lb_modal-company">
-                            <img src="@routes.Assets.versioned("images/lunatech-logo-black.svg")">
-                            <p>Lunatech is an IT development<br />& consulting company</p>
+                            <img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")">
+                            <p>Lunatech is an IT development <br />& consulting company with offices<br />in Netherlands, Belgium and France.</p>
                         </div>
                         <nav class="lb_modal-menu">
                             <a class="lb_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lb_menu-item_entry">Netherlands</span></a>
@@ -56,7 +59,7 @@
             </div>
 
             <!-- Social -->
-            <div class="lb_social">
+            <div class="lb_social lb_pl-lg lb_pb-lg">
                 <a href="https://twitter.com/lunatechlabs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
                 <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lb_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
                 <a href="https://github.com/lunatech-labs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
@@ -90,14 +93,10 @@
 
         <!-- Footer -->
         <footer>
-            <div class="lb_footer-top">
-                <!-- Logo + baseline -->
-                <div>
-                    <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
-                    <p class="lb_baseline">Lunatech is an IT development & consulting company with offices in Netherlands, Belgium and France.</p>
-                </div>
-    
-                <!-- Address -->
+            <p class="lb_baseline">Lunatech is an IT development<br />& consulting company with offices in<br />Netherlands, Belgium and France.</p>
+
+            <div class="lb_footer-block">
+                 <!-- Address -->
                 <div class="lb_address">
                     <div class="lb_address-part">  
                         <div class="lb_address-country">
@@ -131,29 +130,42 @@
                         </div>
                     </div>
                 </div>
-            
-                <div>
-                    <!-- Follow -->
-                    <div class="lb_follow">
-                        <h3>Follow us</h3>
-                        <form action="https://lunatech.us6.list-manage.com/subscribe/post?u=cf40d3fd9a5ebdb6782320c8d&amp;id=5af5a45e75" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-                            <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL" placeholder="Enter email">
-                            <button class="lb_btn lb_primary-btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Register</button>
-                        </form>
-                    </div>
 
-                    <!-- Social -->
-                    <div class="lb_social">
-                        <a href="https://twitter.com/lunatechlabs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
-                        <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lb_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
-                        <a href="https://github.com/lunatech-labs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
-                        <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
-                    </div>
+                <!-- Follow -->
+                <div class="lb_follow">
+                    <h3>Follow us</h3>
+                    <form action="https://lunatech.us6.list-manage.com/subscribe/post?u=cf40d3fd9a5ebdb6782320c8d&amp;id=5af5a45e75" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                        <input type="email" value="" name="EMAIL" class="required" id="mce-EMAIL" placeholder="Enter email">
+                        <button class="lb_btn lb_primary-btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Register</button>
+                    </form>
+                </div>
+
+                <!-- Social -->
+                <div class="lb_social">
+                    <a href="https://twitter.com/lunatechlabs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="mdi-twitter" data-inline="false"></span></a>
+                    <a href="https://www.linkedin.com/company/lunatech-research/" target="_blank" class="lb_cursor-anim" ><span class="iconify" data-icon="brandico:linkedin" data-inline="false"></span></a>
+                    <a href="https://github.com/lunatech-labs" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"></span></a>
+                    <a href="https://www.instagram.com/lunatech_nl/" target="_blank" class="lb_cursor-anim"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
                 </div>
             </div>
-            <div class="lb_footer-bottom">
-                <p>2021 © Lunatech</p>
+
+            <p class="lb_copyright">Copyright © 2021 Lunatech. All rights reserved.</p>
+           
+            <!-- IMG background -->
+            <div class="lb_une-background1"></div>
+            <div class="lb_une-background2">
+                <div class="lb_text-ban">
+                    <div class="lb_text-ban-animation">
+                        <p>Lunatech<span>'</span>s engineer blog</p>
+                        <p>Lunatech's engineer blog</p>
+                        <p>Lunatech<span>'</span>s engineer blog</p>
+                        <p>Lunatech's engineer blog</p>
+                    </div>
+                </div> 
+                <div class="lb_border-grid"></div>
+                <div class="lb_border-grid"></div>
             </div>
+            <div class="lb_une-background3"></div>
         </footer>
 
         <script>
@@ -192,5 +204,16 @@
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/custom_cursor.js")""></script>
         <!-- Menu modal -->
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/menu_modal.js")""></script>
+        <script>
+            $(window).scroll(function() {    
+                var scroll = $(window).scrollTop();
+    
+                if (scroll >= 500) {
+                    $(".lb_menu-bar").addClass("lb_scrolling");
+                } else {
+                    $(".lb_menu-bar").removeClass("lb_scrolling");
+                }
+            });
+        </script>
     </body>
 </html>

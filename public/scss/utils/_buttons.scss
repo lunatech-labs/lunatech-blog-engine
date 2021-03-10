@@ -10,21 +10,21 @@
 .lb_primary-btn {
     background: $lb_lightRed;
     color: $lb_white;
-    border: 2px solid $lb_lightRed;
+    border: 1px solid $lb_lightRed;
     &:hover {
         background: $lb_darkRed;
         color: $lb_white;
-        border: 2px solid $lb_darkRed;
+        border: 1px solid $lb_darkRed;
     }
 }
 .lb_secondary-btn {
     background: transparent;
     color: $lb_lightRed;
-    border: 2px solid $lb_lightRed;
+    border: 1px solid $lb_lightRed;
     &:hover {
         background: transparent;
         color: $lb_darkRed;
-        border: 2px solid $lb_darkRed;
+        border: 1px solid $lb_darkRed;
     }
 }
   

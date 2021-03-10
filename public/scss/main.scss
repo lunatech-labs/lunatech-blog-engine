@@ -6,8 +6,9 @@
 @import "utils/variables";
 @import "utils/fonts";
 @import "utils/general";
+@import "utils/utils";
 
-// Layour partials
+// Layout partials
 @import "utils/footer";
 
 // Components partials
@@ -20,5 +21,4 @@
 
 // Part page partials
 @import "utils/cover";
-@import "utils/articles-grid";
 @import "utils/post-list";

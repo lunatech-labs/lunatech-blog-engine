@@ -1,58 +1,59 @@
 /* -------------- GENERAL -------------- */
 footer {
-    display: flex;
-    flex-direction: column;
-    background: $lb_lightGray;
-    color: white;
-    padding: 80px;
-    border-top: 2px solid $lb_lightRed;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 100vh;
+    grid-template-rows: 160px 1fr 160px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* -------------- LAYOUT -------------- */
-.lb_footer-top {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-column-gap: 30px;
-}
-.lb_footer-bottom {
-    border-top: 1px solid rgba(150, 150, 150, .25);
-    padding: 40px 0;
+.lb_footer-block {
+    grid-row: 2 / 3;
+    grid-column: 3 / 6;
+    padding: 0 80px;
 }
 /* -------------- COMPONENTS -------------- */
+h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: $lb_white;
+}
 .lb_baseline {
-    margin-top: 30px;
-    opacity: $lb_opacity;
+    color: $lb_white;
+    opacity: .5;
+    font-weight: 300;
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    padding-left: 80px;
 }
 .lb_address {
     display: flex;
     flex-direction: column;
+    color: $lb_white;
+    margin-bottom: 60px;
     .lb_address-part {
         display: flex;
         align-items: flex-end;
         &:first-child {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         .lb_address-country {
-            margin-bottom: 30px;
             width: 50%;
-            h3 {
-                text-transform: uppercase;
-                font-size: 18px;
-                margin-bottom: 20px;
-                letter-spacing: 2px;
-            }
             div {
                 p {
                     &:first-child {
-                        font-size: 18px;
+                        font-size: 16px;
                         margin-bottom: 10px;
                     }
                     &:nth-child(2) {
                         font-size: 16px;
-                        font-weight: 300;
-                        line-height: 22px;
-                        span {
-                            text-transform: uppercase;
-                        }
+                        opacity: .5;
+                        span {text-transform: uppercase;}
                     }
                 }
             }
@@ -60,16 +61,26 @@ footer {
     }
 }
 .lb_follow {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     form {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         input {
             height: 40px;
             border-radius: 0;
             border: none;
             width: 100%;
-            margin-right: 8px;
+            margin-bottom: 10px;
         }
     }
+}
+.lb_copyright {
+    grid-row: 3 / 4;
+    grid-column: 1 / 6;
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+    color: $lb_white;
+    font-size: 16px;
+    opacity: .5;
 }
