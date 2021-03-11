@@ -388,6 +388,53 @@ h3 {
     .lb_modal .lb_close .lb_close-bar2 {
       transform: rotate(-45deg); }
 
+/* --------------------------------- HIGHLIGHT STYLE ATOM ONE DARK --------------------------------- */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  color: #abb2bf;
+  background: #282c34;
+  border-radius: 10px; }
+
+.hljs-comment, .hljs-quote {
+  color: #5c6370;
+  font-style: italic; }
+
+.hljs-doctag, .hljs-keyword, .hljs-formula {
+  color: #c678dd; }
+
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst {
+  color: #e06c75; }
+
+.hljs-literal {
+  color: #56b6c2; }
+
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string {
+  color: #98c379; }
+
+.hljs-built_in, .hljs-class .hljs-title {
+  color: #e6c07b; }
+
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number {
+  color: #d19a66; }
+
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title {
+  color: #61aeee; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+.hljs-link {
+  text-decoration: underline; }
+
+.listingblock {
+  margin-bottom: 40px;
+  overflow: scroll; }
+
 /* -------------- GENERAL -------------- */
 .lb_une {
   position: relative;
@@ -654,6 +701,9 @@ h3 {
     align-items: center;
     justify-content: space-between; }
 
+.lb_post-page_footer {
+  padding: 0 320px 80px 320px; }
+
 /* -------------- COMPONENTS -------------- */
 .lb_post-page_return {
   color: #FFFFFF;
@@ -713,7 +763,8 @@ h3 {
 
 .lb_post-page_content {
   padding: 80px 320px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
   .lb_post-page_content h2 {
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
@@ -726,14 +777,9 @@ h3 {
     font-weight: 300;
     margin-bottom: 40px; }
   .lb_post-page_content code {
-    color: #EA212E;
-    background: #111111;
-    padding: 5px;
-    margin: 0 5px;
-    line-height: 30px; }
+    line-height: 26px; }
   .lb_post-page_content em {
-    opacity: .5;
-    font-size: 16px; }
+    opacity: .5; }
   .lb_post-page_content a {
     color: #EA212E;
     opacity: 1; }
@@ -748,3 +794,12 @@ h3 {
     margin-top: -80px; }
     .lb_post-page_content .imageblock img {
       width: 100%; }
+
+.lb_post-page_author {
+  display: flex; }
+  .lb_post-page_author img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px; }
+  .lb_post-page_author p {
+    opacity: .5; }

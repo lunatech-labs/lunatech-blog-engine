@@ -57,7 +57,7 @@
         <main class="lb_post-page">
             <div class="lb_post-page_header">
                 <div class="lb_post-page_header-top">
-                    <a class="lb_post-page_return" href="#"><span class="iconify" data-icon="bx:bx-arrow-back" data-inline="false"></span>Back to all posts</a>
+                    <a class="lb_post-page_return" href="https://blog.lunatech.com/"><span class="iconify" data-icon="bx:bx-arrow-back" data-inline="false"></span>Back to all posts</a>
                     <h1 class="lb_post-page_title">@post.title</h1>
                 </div>
                 <div class="lb_post-page_img">
@@ -69,17 +69,17 @@
                 </div> 
             </div>
 
-
-
-
-
-            
             <div class="lb_post-page_content">
                 @Html(post.htmlContent)
             </div>
 
             <div class="lb_post-page_footer">
-
+                <div class="lb_post-page_author">
+                    @if(post.author.nonEmpty) {
+                        <img src="@post.author.map(_.avatar_url)" alt="@post.author.map(_.name)" nopin="nopin">
+                    }
+                    <p>By @post.author.map(_.name.getOrElse(post.authorName)).getOrElse(post.authorName)</p>
+                </div>
             </div>
         </main>
 
@@ -87,22 +87,15 @@
 
 
 
-        <div class="post-footer">
-            <figure class="author-image">
-                <a class="img" href="#" style="background-image: url(@post.author.map(_.avatar_url))"><span class="hidden">@post.author.map(_.name)'s Picture</span></a>
-            </figure>
+   
 
-            <section class="author">
-                <h4>By @post.author.map(_.name.getOrElse(post.authorName)).getOrElse(post.authorName)</h4>
+                
 
-                <p>@post.author.map(_.bio)</p>
+    
 
+                
 
-                <p class="post-details-author">@if(post.author.nonEmpty) {<img class="author-thumb" style="overflow: hidden; width: 100%" src="@post.author.map(_.avatar_url)" alt="@post.author.map(_.name)" nopin="nopin"> }</p>
-                <p class="post-details-title">by @post.author.map(_.name.getOrElse(post.authorName)).getOrElse(post.authorName)</p>
-
-            </section>
-        </div>
+     
 
 
 
@@ -210,6 +203,13 @@
             ga('create', 'UA-56364023-3', 'auto');
             ga('send', 'pageview');
         </script>
+        <!-- Highlight -->
+        <script type="text/javascript" src="/assets/javascripts/highlight.pack.js")"></script>
+        <script>
+            document.querySelectorAll('pre.highlight').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        </script>
         <!-- Iconify -->
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         <!-- Custom cursor -->
@@ -218,11 +218,13 @@
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/custom_cursor.js")""></script>
         <!-- Menu modal -->
         <script type="text/javascript" src="@routes.Assets.versioned("javascripts/menu_modal.js")""></script>
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script>
             $(window).scroll(function() {    
                 var scroll = $(window).scrollTop();
     
-                if (scroll = 500) {
+                if (scroll <= 2000) {
                     $(".lb_menu-bar").addClass("lb_scrolling");
                 } else {
                     $(".lb_menu-bar").removeClass("lb_scrolling");

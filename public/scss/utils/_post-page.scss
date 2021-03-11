@@ -20,7 +20,7 @@
     }
 }
 .lb_post-page_footer {
-    
+    padding: 0 320px 80px 320px;
 }
 /* -------------- COMPONENTS -------------- */
 .lb_post-page_return {
@@ -85,6 +85,7 @@
 .lb_post-page_content {
     padding: 80px 320px;
     color: $lb_white;
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
     h2 {
         font-family: 'Roboto', sans-serif;
         color: $lb_white;
@@ -98,17 +99,8 @@
         font-weight: 300;
         margin-bottom: 40px;
     }
-    code {
-        color: $lb_lightRed;
-        background: $lb_darkGray;
-        padding: 5px;
-        margin: 0 5px;
-        line-height: 30px;
-    }
-    em {
-        opacity: .5;
-        font-size: 16px;
-    }
+    code {line-height: 26px;}
+    em {opacity: .5;}
     a {
         color: $lb_lightRed;
         opacity: 1;
@@ -126,5 +118,16 @@
         img {
             width: 100%;
         }
+    }
+}
+.lb_post-page_author {
+    display: flex;
+    img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    p {
+        opacity: .5;
     }
 }
