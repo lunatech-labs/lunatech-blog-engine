@@ -1,0 +1,45 @@
+/* -------------- GENERAL -------------- */
+header {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 80px 0 80px;
+    z-index: 5;
+}
+/* -------------- COMPONENTS -------------- */
+.lb_menu {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 8px;
+    flex-direction: column;
+    &:hover {
+        .lb_menu-bar:first-child {width: 24px;}
+        .lb_menu-bar:nth-child(2) {width: 14px;}
+        .lb_menu-bar:first-child, .lb_menu-bar:nth-child(2) {
+            transform: translateX(-5px);
+            background: $lb_lightRed;
+        }
+    }
+    .lb_menu-bar {
+        display: block;
+        background: $lb_black;
+        height: 1px;
+        transition: all .7s ease;
+        &:first-child {
+            width: 14px;
+        }
+        &:nth-child(2) {
+            width: 24px;
+            margin-top: 10px;
+        }
+    }
+    .lb_menu-bar.lb_scrolling {
+        background: $lb_white;
+    }
+    
+}

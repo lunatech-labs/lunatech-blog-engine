@@ -9,6 +9,7 @@
 @import "utils/utils";
 
 // Layout partials
+@import "utils/header";
 @import "utils/footer";
 
 // Components partials
@@ -22,3 +23,4 @@
 // Part page partials
 @import "utils/cover";
 @import "utils/post-list";
+@import "utils/post-page";

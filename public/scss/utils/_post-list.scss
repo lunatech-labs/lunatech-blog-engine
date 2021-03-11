@@ -1,10 +1,9 @@
 /* -------------- GENERAL -------------- */
 .lb_post-list {
     padding: 160px 80px 80px 80px;
-    background-image: linear-gradient(to bottom, transparent, $lb_black 20%), url("../images/bg_post-list.png");
+    background-image: linear-gradient(to bottom, transparent, $lb_lightGray 20%), url("../images/bg_post-list.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position-y: -120px;
 }
 /* -------------- LAYOUT -------------- */
 .lb_post-list_head {
@@ -15,7 +14,7 @@
 .lb_post-list_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
+    grid-gap: 40px;
 }
 /* -------------- COMPONENTS -------------- */
 .lb_category {
@@ -62,7 +61,6 @@
             justify-content: flex-end;
             height: 30px;
             width: 300px;
-            position: absolute;
             bottom: -30px;
             right: 0px;
             transform-origin: top right;
@@ -111,5 +109,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 40px;
 }

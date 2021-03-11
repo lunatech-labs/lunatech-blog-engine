@@ -6,7 +6,6 @@ footer {
     grid-template-columns: repeat(8, 1fr);
     height: 100vh;
     grid-template-rows: 160px 1fr 160px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* -------------- LAYOUT -------------- */
 .lb_footer-block {
@@ -71,6 +70,7 @@ h3 {
             border: none;
             width: 100%;
             margin-bottom: 10px;
+            padding: 0 20px;
         }
     }
 }

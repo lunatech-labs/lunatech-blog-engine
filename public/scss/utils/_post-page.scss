@@ -1,0 +1,130 @@
+/* -------------- GENERAL -------------- */
+.lb_post-page {
+    background: $lb_lightGray;
+}
+/* -------------- LAYOUT -------------- */
+.lb_post-page_header {
+    background: $lb_black;
+    display: flex;
+    flex-direction: column;
+    padding: 200px 80px 40px 80px;
+    .lb_post-page_header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .lb_post-page_header-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.lb_post-page_footer {
+    
+}
+/* -------------- COMPONENTS -------------- */
+.lb_post-page_return {
+    color: $lb_white;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding-top: 80px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: $lb_lightRed;
+    }
+    svg {
+        font-size: 18px;
+        margin-right: 10px;
+        font-size: 24px;
+    }
+}
+.lb_post-page_title {
+    font-family: 'Bebas Neue';
+    color: $lb_white;
+    font-size: 174px;
+    line-height: 146px;
+    z-index: 2;
+    text-align: right;
+    width: calc(100% - 220px);
+}
+.lb_post-page_img {
+    height: 480px;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: -83px;
+    img {
+        width: 100%;
+    } 
+}
+.lb_post-page_tags {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    a {
+        text-decoration: none;
+        color: $lb_white;
+        font-size: 10px;
+        margin-left: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        &:hover {color: $lb_lightRed;}
+    }
+}
+.lb_post-page_date {
+    font-size: 16px;
+    color: $lb_white;
+    opacity: .5;
+    margin-bottom: 40px;
+}
+.lb_post-page_content {
+    padding: 80px 320px;
+    color: $lb_white;
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        color: $lb_white;
+        font-size: 42px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+    code {
+        color: $lb_lightRed;
+        background: $lb_darkGray;
+        padding: 5px;
+        margin: 0 5px;
+        line-height: 30px;
+    }
+    em {
+        opacity: .5;
+        font-size: 16px;
+    }
+    a {
+        color: $lb_lightRed;
+        opacity: 1;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .imageblock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $lb_darkGray;
+        padding: 40px;
+        margin-top: -80px;
+        img {
+            width: 100%;
+        }
+    }
+}

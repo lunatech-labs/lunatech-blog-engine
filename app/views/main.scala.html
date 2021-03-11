@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/main.css")">
         <link rel="alternate" type="application/rss+xml" title="Lunatech Blog » Feed" href="https://blog.lunatech.com/feed/">
     </head>
+
     <body>
         <!-- Custom cursor -->
         <div class="lb_page">
@@ -20,38 +21,40 @@
             </div>
         </div>
 
-        <!-- Une screen -->
-        <div class="lb_une">
-            <!-- Menu + logo -->
-            <div class="lb_une-header">
-                <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
+        <header>
+            <!-- Logo -->
+            <a class="lb_logo" href="#"><img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")"></a>
 
-                <button type="button" id="myBtn" class="lb_menu lb_cursor-anim">
-                    <span class="lb_menu-bar"></span>
-                    <span class="lb_menu-bar"></span>
-                </button>
+            <!-- Menu -->
+            <button type="button" id="myBtn" class="lb_menu lb_cursor-anim">
+                <span class="lb_menu-bar"></span>
+                <span class="lb_menu-bar"></span>
+            </button>
 
-                <div id="myModal" class="lb_modal">
-                    <div class="lb_modal-content">
-                        <div class="lb_modal-company">
-                            <img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")">
-                            <p>Lunatech is an IT development <br />& consulting company with offices<br />in Netherlands, Belgium and France.</p>
-                        </div>
-                        <nav class="lb_modal-menu">
-                            <a class="lb_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lb_menu-item_entry">Netherlands</span></a>
-                            <a class="lb_menu-item" href="https://lunatech.be/" target="_blank"><span class="lb_menu-item_entry">Belgium</span></a>
-                            <a class="lb_menu-item" href="https://lunatech.fr/" target="_blank"><span class="lb_menu-item_entry">France</span></a>
-                        </nav>
-                    
-                        <div class="lb_close lb_cursor-anim">
-                            <p>close</p>
-                            <div class="lb_close-bar lb_close-bar1"></div>
-                            <div class="lb_close-bar lb_close-bar2"></div> 
-                        </div>
+            <!-- Modal menu -->
+            <div id="myModal" class="lb_modal">
+                <div class="lb_modal-content">
+                    <div class="lb_modal-company">
+                        <img src="@routes.Assets.versioned("images/lunatech-logo-white.svg")">
+                        <p>Lunatech is an IT development <br />& consulting company with offices<br />in Netherlands, Belgium and France.</p>
+                    </div>
+                    <nav class="lb_modal-menu">
+                        <a class="lb_menu-item" href="https://lunatech.nl/" target="_blank"><span class="lb_menu-item_entry">Netherlands</span></a>
+                        <a class="lb_menu-item" href="https://lunatech.be/" target="_blank"><span class="lb_menu-item_entry">Belgium</span></a>
+                        <a class="lb_menu-item" href="https://lunatech.fr/" target="_blank"><span class="lb_menu-item_entry">France</span></a>
+                    </nav>
+                
+                    <div class="lb_close lb_cursor-anim">
+                        <p>close</p>
+                        <div class="lb_close-bar lb_close-bar1"></div>
+                        <div class="lb_close-bar lb_close-bar2"></div> 
                     </div>
                 </div>
             </div>
+        </header>
 
+        <!-- Une screen -->
+        <div class="lb_une">
             <!-- Title -->
             <div class="lb_une-title">
                 <p>Lunatech's<br />engineer</p>
@@ -91,7 +94,6 @@
             @content
         </main>
 
-        <!-- Footer -->
         <footer>
             <p class="lb_baseline">Lunatech is an IT development<br />& consulting company with offices in<br />Netherlands, Belgium and France.</p>
 
@@ -184,7 +186,6 @@
             ga('create', 'UA-56364023-3', 'auto');
             ga('send', 'pageview');
         </script>
-
         <!--Button scroll down header -->
         <script>
             $(document).on('click', 'a[href^="#"]', function (event) {
@@ -195,7 +196,6 @@
                 }, 500);
             });
         </script>
-
         <!-- Iconify -->
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         <!-- Custom cursor -->
