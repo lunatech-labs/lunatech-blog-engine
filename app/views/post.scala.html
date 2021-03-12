@@ -77,8 +77,10 @@
                 <div class="lb_post-page_author">
                     @if(post.author.nonEmpty) {
                         <img src="@post.author.map(_.avatar_url)" alt="@post.author.map(_.name)" nopin="nopin">
+                        <div class="lb_author-frame"></div>
                     }
                     <p>By @post.author.map(_.name.getOrElse(post.authorName)).getOrElse(post.authorName)</p>
+                    <div class="lb_author-line"></div>
                 </div>
             </div>
         </main>

@@ -7,11 +7,9 @@
     background: $lb_black;
     display: flex;
     flex-direction: column;
-    padding: 200px 80px 40px 80px;
+    padding: 320px 80px 60px 80px;
     .lb_post-page_header-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        position: relative;
     }
     .lb_post-page_header-bottom {
         display: flex;
@@ -28,10 +26,10 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    padding-top: 80px;
     text-decoration: none;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
     &:hover {
         color: $lb_lightRed;
     }
@@ -41,15 +39,6 @@
         font-size: 24px;
     }
 }
-.lb_post-page_title {
-    font-family: 'Bebas Neue';
-    color: $lb_white;
-    font-size: 174px;
-    line-height: 146px;
-    z-index: 2;
-    text-align: right;
-    width: calc(100% - 220px);
-}
 .lb_post-page_img {
     height: 480px;
     width: 100%;
@@ -57,15 +46,25 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    margin-top: -83px;
     img {
         width: 100%;
     } 
 }
+.lb_post-page_title {
+    font-family: 'Bebas Neue';
+    color: $lb_white;
+    font-size: 96px;
+    line-height: 96px;
+    z-index: 2;
+    text-align: right;
+    width: calc(100% - 220px);
+    position: absolute;
+    right: 0;
+    top: -92px;
+}
 .lb_post-page_tags {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
     a {
         text-decoration: none;
         color: $lb_white;
@@ -80,12 +79,10 @@
     font-size: 16px;
     color: $lb_white;
     opacity: .5;
-    margin-bottom: 40px;
 }
 .lb_post-page_content {
-    padding: 80px 320px;
+    padding: 80px 320px 20px 320px;
     color: $lb_white;
-    border-bottom: 1px solid rgba(0, 0, 0, .25);
     h2 {
         font-family: 'Roboto', sans-serif;
         color: $lb_white;
@@ -114,20 +111,45 @@
         justify-content: center;
         background: $lb_darkGray;
         padding: 40px;
-        margin-top: -80px;
         img {
             width: 100%;
         }
     }
+    .image {
+        background: $lb_darkGray;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+    }
 }
 .lb_post-page_author {
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
     img {
         width: 80px;
         height: 80px;
         margin-bottom: 20px;
+        background: $lb_darkGray;
+        z-index: 2;
+    }
+    .lb_author-frame {
+        width: 80px;
+        height: 80px;
+        transform: rotate(10deg);
+        position: absolute;
+        z-index: 2;
+        border: 1px solid $lb_lightRed;
     }
     p {
+        color: $lb_white;
         opacity: .5;
+    }
+    .lb_author-line {
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        width: 100%;
+        position: absolute;
+        top: 40px;
     }
 }
