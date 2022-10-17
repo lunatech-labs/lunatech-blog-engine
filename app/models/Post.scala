@@ -1,11 +1,12 @@
 package models
 
-import org.asciidoctor.{Asciidoctor, Options}
 import org.asciidoctor.Asciidoctor.Factory
-import org.asciidoctor.ast.{Document, DocumentHeader}
+import org.asciidoctor.ast.Document
+import org.asciidoctor.{Asciidoctor, Options}
 import org.joda.time.DateTime
 import play.api.libs.json._
 
+import scala.jdk.CollectionConverters.ListHasAsScala
 import scala.util.Try
 import scala.util.control.Exception._
 
@@ -16,7 +17,7 @@ object Post {
 
 case class Post(slug: String, mainImage: String, content: String, author: Option[Author] = None) {
 
-  val document: Document = Post.asciidoctor.load(content, Options.builder().build())
+  lazy val document: Document = Post.asciidoctor.load(content, Options.builder().build())
 
   lazy val htmlContent: String = Post.asciidoctor.convert(
     content,
@@ -24,9 +25,11 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
 
   lazy val authorName: String = document.getAuthors.get(0).getFullName
 
+  lazy val authorsNames: Seq[String] = document.getAuthors.asScala.map(_.getFullName).toSeq
+
   lazy val publicationDate: DateTime = new DateTime(document.getRevisionInfo.getDate)
 
-  val title: String = document.getTitle
+  lazy val title: String = document.getTitle
 
   lazy val lang: String = allCatch.opt(document.getAttributes.get("lang").toString).getOrElse("en")
 
@@ -47,6 +50,7 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
         "lang" -> JsString(lang),
         "image_url" -> JsString(mainImage),
         "author" -> JsString(author.map(_.name.getOrElse(authorName)).getOrElse(authorName)),
+        "authors" -> JsArray(authorsNames.map(JsString)),
         "author_name" -> JsString(authorName),
         "author_img" -> JsString(author.map(_.avatar_url).getOrElse("null")),
         "tags" -> JsArray(tags.getOrElse(Array.empty).toSeq.map(JsString)),
