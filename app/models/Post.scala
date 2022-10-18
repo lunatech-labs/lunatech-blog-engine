@@ -1,11 +1,13 @@
 package models
 
-import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Asciidoctor.Factory
-import org.asciidoctor.ast.DocumentHeader
+import org.asciidoctor.ast.Document
+import org.asciidoctor.{Asciidoctor, Options}
 import org.joda.time.DateTime
 import play.api.libs.json._
 
+import scala.jdk.CollectionConverters.ListHasAsScala
+import scala.util.Try
 import scala.util.control.Exception._
 
 object Post {
@@ -15,23 +17,29 @@ object Post {
 
 case class Post(slug: String, mainImage: String, content: String, author: Option[Author] = None) {
 
+  lazy val document: Document = Post.asciidoctor.load(content, Options.builder().build())
+
   lazy val htmlContent: String = Post.asciidoctor.convert(
     content,
-    new java.util.HashMap[String, Object]())
+    Options.builder().build())
 
-  val header: DocumentHeader = Post.asciidoctor.readDocumentHeader(content)
+  lazy val authorName: String = document.getAuthors.get(0).getFullName
 
-  lazy val authorName: String = header.getAuthor.getFullName
+  lazy val authorsNames: Seq[String] = document.getAuthors.asScala.map(_.getFullName).toSeq
 
-  lazy val publicationDate: DateTime = new DateTime(header.getRevisionInfo.getDate)
+  lazy val publicationDate: DateTime = new DateTime(document.getRevisionInfo.getDate)
 
-  val title: String = header.getDocumentTitle.getMain
+  lazy val title: String = document.getTitle
 
-  lazy val lang: String = allCatch.opt(header.getAttributes.get("lang").toString).getOrElse("en")
+  lazy val lang: String = allCatch.opt(document.getAttributes.get("lang").toString).getOrElse("en")
 
-  lazy val tags: Option[Array[String]] = allCatch.opt(header.getAttributes.get("tags").toString.drop(1).dropRight(1).split(",") :+ lang)
+  lazy val tags: Option[Array[String]] = allCatch.opt(document.getAttributes.get("tags").toString.drop(1).dropRight(1).split(",") :+ lang)
 
-  lazy val excerpt: String = Post.asciidoctor.convert(content.split("\n").slice(6, 10).mkString(" "), new java.util.HashMap[String, Object]())
+  lazy val excerpt: String = Try(content.split("\n").toList
+    .dropWhile(_.nonEmpty)
+    .dropWhile(_.isEmpty)
+    .dropWhile(line => line.isEmpty || !line(0).isLetterOrDigit)
+    .head).getOrElse("")
 
   def toJson: JsObject = {
     JsObject(
@@ -42,9 +50,11 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
         "lang" -> JsString(lang),
         "image_url" -> JsString(mainImage),
         "author" -> JsString(author.map(_.name.getOrElse(authorName)).getOrElse(authorName)),
+        "authors" -> JsArray(authorsNames.map(JsString)),
         "author_name" -> JsString(authorName),
         "author_img" -> JsString(author.map(_.avatar_url).getOrElse("null")),
-        "tags" -> JsArray(tags.getOrElse(Array.empty).toSeq.map(JsString))
+        "tags" -> JsArray(tags.getOrElse(Array.empty).toSeq.map(JsString)),
+        "excerpt" -> JsString(excerpt)
       ))
   }
 }
