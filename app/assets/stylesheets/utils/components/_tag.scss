@@ -1,0 +1,19 @@
+.tag-slider {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.tag {
+    @include flexbox;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    height: 20px;
+    color: #858585;
+    text-transform: capitalize;
+    white-space: nowrap;
+    background: #f6f6f6;
+    text-decoration: none;
+}

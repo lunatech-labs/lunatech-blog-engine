@@ -1,0 +1,8 @@
+.wrapper {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 0 32px;
+    @include phone {
+        padding: 0 24px;
+    }
+}

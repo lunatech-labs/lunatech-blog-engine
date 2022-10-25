@@ -1,0 +1,8 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px;
+    @include phone {
+        grid-gap: 24px;
+    }
+}
