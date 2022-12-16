@@ -1,16 +1,21 @@
 article {
     margin-top: 32px;
     h2 {
-        font-size: 24px;
+        font-size: 32px;
         margin: 32px 0;
     }
     h3 {
-        font-size: 20px;
+        font-size: 24px;
         margin: 32px 0;
+    }
+    h4 {
+        font-size: 20px;
+        margin: 32px 0 16px 0;
     }
     p {
         font-size: 20px;
         line-height: 32px;
+        word-break: break-word;
     }
     a {
         color: #292929;
@@ -59,5 +64,37 @@ article {
         padding: 8px;
         border-radius: 4px;
         white-space: break-spaces;
+    }
+    table {
+        margin: 32px 0;
+        caption {
+            text-align: left;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 16px;
+    }
+    .hdlist1 {
+        background: #eff3f8;
+        padding: 4px 8px;
+        display: inline-flex;
+        width: initial;
+        border-radius: 4px;
+    }
+    a {
+        color: #EA212E;
+        &:hover {
+            color: #C21823;
+        }
     }
 }
