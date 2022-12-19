@@ -1,7 +1,7 @@
 article {
     margin-top: 32px;
     h2 {
-        font-size: 32px;
+        font-size: 28px;
         margin: 32px 0;
     }
     h3 {
@@ -85,11 +85,20 @@ article {
         padding: 16px;
     }
     .hdlist1 {
-        background: #eff3f8;
-        padding: 4px 8px;
         display: inline-flex;
         width: initial;
         border-radius: 4px;
+        margin-top: 32px;
+        margin-bottom: 8px;
+    }
+    p code {
+        background: #eff3f8;
+        padding: 0 8px;
+        display: inline-flex;
+        width: initial;
+        border-radius: 4px;
+        margin: 2px 0;
+        font-weight: 700;
     }
     a {
         color: #EA212E;
