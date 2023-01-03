@@ -44,7 +44,7 @@ class ApplicationStart @Inject()(
       }
 
       getPostByTag(posts).map { case (tag, posts) =>
-        cache.set("tag-" + tag, posts)
+        cache.set("tag-" + tag.trim, posts)
       }
     }
     Await.result(fPosts, 5 minutes)

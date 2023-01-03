@@ -67,6 +67,18 @@
             opacity: 1;
         }
     }
+    &__tag {
+        .tag {
+            transition: all .5s ease;
+            &:hover {
+                -webkit-transform: scale(1.10); /* Safari et Chrome */
+                -moz-transform: scale(1.10); /* Firefox */
+                -ms-transform: scale(1.10); /* Internet Explorer 9 */
+                -o-transform: scale(1.10); /* Opera */
+                transform: scale(1.10);
+            }
+        }
+    }
     &__title {
         color: black;
         font-size: 24px;
