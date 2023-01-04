@@ -8,6 +8,8 @@
     }
 </script>
 
+@mainTags = @{List("fr", "en", "java", "scala", "kotlin")}
+
 @displayPost(post: Post) = {
     <a class="card" href="@post.slug">
         <div class="card__cover">
@@ -28,8 +30,8 @@
             </div>
             <p class="card__title">@post.title</p>
             <div class="flexbox ff-wrap">
-                @post.tags.getOrElse(Array.empty).map { tag =>
-                    <p class="tag">@tag</p>
+                @post.tags.getOrElse(Array.empty).map(_.trim.toLowerCase).toSet.map { (tag: String) =>
+                    <object class="card__tag"><a class="tag" href="@routes.HomeController.byTags(tag)">@tag</a></object>
                 }
             </div>
         </div>
@@ -58,7 +60,7 @@
             <p class="subtitle">Our different categories</p>
 
             <div class="tag-slider">
-                @posts.flatMap(_.tags.getOrElse(Array.empty)).toSet.map {(tag:String) =>
+                @mainTags.map {(tag:String) =>
                     <a class="tag" href="@routes.HomeController.byTags(tag)">@tag</a>
                 }
             </div>
