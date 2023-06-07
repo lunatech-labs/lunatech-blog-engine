@@ -1,6 +1,10 @@
 // Flexbox
 .flexbox {@include flexbox;}
-.ff-wrap {flex-flow: wrap;}
+.ff-wrap {
+    flex-flow: wrap;
+    height: 20px;
+    overflow: hidden;
+}
 .jc-c {justify-content: center;}
 
 // Space
