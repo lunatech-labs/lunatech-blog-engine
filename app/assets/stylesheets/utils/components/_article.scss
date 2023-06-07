@@ -21,6 +21,9 @@ article {
             font-size: 18px;
         }
     }
+    > div {
+        overflow-x: auto;
+    }
     p {
         font-size: 20px;
         line-height: 32px;
@@ -76,7 +79,6 @@ article {
         background: #F8F9FC;
         padding: 8px;
         border-radius: 4px;
-        white-space: break-spaces;
     }
     table {
         margin: 32px 0;
@@ -86,8 +88,9 @@ article {
             font-weight: 700;
         }
         p {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 24px;
+            white-space: nowrap;
         }
     }
     table, th, td {
@@ -95,7 +98,7 @@ article {
         border-collapse: collapse;
     }
     th, td {
-        padding: 16px;
+        padding: 8px;
     }
     .hdlist1 {
         display: inline-flex;
