@@ -30,8 +30,8 @@
 }
 .scroll-up {
     position: fixed;
-    bottom: 64px;
-    right: 64px;
+    bottom: 32px;
+    right: 32px;
     display: flex;
     font-size: 32px;
     cursor: pointer;
@@ -43,6 +43,6 @@
     border: 1px solid #e7e7e7;
     padding: 7px;
     @include phone {
-        display: none;
+        display: none!important;
     }
 }
