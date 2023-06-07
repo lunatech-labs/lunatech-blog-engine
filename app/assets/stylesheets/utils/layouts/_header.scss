@@ -5,12 +5,16 @@
     height: 80px;
     background: black;
     border-bottom: 1px solid #2b2b2b;
-    @include tablet-landscape {
+    position: fixed;
+    min-width: 100%;
+    z-index: 2;
+    @include desktop-up {
         padding: 0 32px;
     }
     @include phone {
         padding: 0 24px;
         height: 64px;
+        position: initial;
     }
     &__menu {
         @include flexbox;

@@ -1,3 +1,9 @@
+main {
+    padding-top: 80px;
+    @include phone {
+        padding-top: 0;
+    }
+}
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
