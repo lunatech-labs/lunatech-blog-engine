@@ -41,8 +41,7 @@
         }
     }
     &__picture {
-        height: 95%;
-        width: auto;
+        max-height: 95%;
         transition: transform 1s;
         &:hover {
             transform: translateZ(20px); 
