@@ -20,3 +20,7 @@ jobs:
         distribution: 'adopt'
     - name: Run tests
       run: sbt test
+    - name: Smoke test
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: .github/workflows/smoke_test.sh
