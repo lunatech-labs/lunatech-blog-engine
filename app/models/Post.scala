@@ -23,7 +23,7 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
     content,
     Options.builder().build())
 
-  lazy val authorName: String = document.getAuthors.asScala.headOption.map(_.getFullName)
+  lazy val authorName: String = document.getAuthors.asScala.headOption.map(_.getFullName).getOrElse("")
 
   lazy val authorsNames: Seq[String] = document.getAuthors.asScala.map(_.getFullName).toSeq
 
@@ -49,7 +49,7 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
         "slug" -> JsString(slug),
         "lang" -> JsString(lang),
         "image_url" -> JsString(mainImage),
-        "author" -> JsString(author.map(_.name.getOrElse(authorName)).getOrElse(authorName)),
+        "author" -> JsString(author.flatMap(_.name).getOrElse(authorName)),
         "authors" -> JsArray(authorsNames.map(JsString)),
         "author_name" -> JsString(authorName),
         "author_img" -> JsString(author.map(_.avatar_url).getOrElse("null")),
