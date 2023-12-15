@@ -23,7 +23,7 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
     content,
     Options.builder().build())
 
-  lazy val authorName: String = document.getAuthors.get(0).getFullName
+  lazy val authorName: String = document.getAuthors.asScala.headOption.map(_.getFullName)
 
   lazy val authorsNames: Seq[String] = document.getAuthors.asScala.map(_.getFullName).toSeq
 
