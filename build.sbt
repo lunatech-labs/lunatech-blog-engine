@@ -11,7 +11,7 @@ libraryDependencies ++= Seq(
   guice, ws, ehcache,
   "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.1" % Test,
   "org.asciidoctor" % "asciidoctorj" % "3.0.0",
-  "com.47deg" %% "github4s" % "0.21.0",
+  "com.47deg" %% "github4s" % "0.33.3",
 )
 
 Global / onChangedBuildSource := ReloadOnSourceChanges
