@@ -120,9 +120,9 @@ article {
         margin: 2px 0;
     }
     a {
-        color: #EA212E;
+        color: $pink;
         &:hover {
-            color: #C21823;
+            color: $darkPink;
         }
     }
     @include phone {

@@ -13,7 +13,7 @@
         outline: none;
         color: white;
         &:focus {
-            border: 1px solid #EA212E;
+            border: 1px solid $pink;
             transition: 0.35s ease;
             color: white;
             &::-webkit-input-placeholder {

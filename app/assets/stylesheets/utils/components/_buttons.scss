@@ -8,14 +8,15 @@
     cursor: pointer;
     border: none;
     text-decoration: none;
+    transition: 0.3s;
 }
-.btn__red {
-    color: white;
-    background: #EA212E;
+.btn__primary {
+    color: $white;
+    background: $pink;
     &:hover {
         color: $white;
         text-decoration: none;
-        background: #C21823;
+        background: $darkPink;
     }
 }
 .btn__secondary {

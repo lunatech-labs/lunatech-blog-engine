@@ -68,12 +68,12 @@
         margin-bottom: $space-md;
         line-height: 32px;
         text-decoration: none;
-        color: $bright-red;
+        color: $pink;
         display: flex;
         height: 64px;
         overflow: hidden;
         &:hover {
-            color: $dark-red;
+            color: $darkPink;
         }
     }
     .lb_post-thumb {
@@ -83,7 +83,7 @@
             width: $size-md;
             height: $size-md;
             border-radius: 50%;
-            background: $dark-sand;
+            background: $darkGray;
         }
         img {
             &:first-child {
@@ -106,9 +106,9 @@
     .lb_post-author {
         text-decoration: none;
         text-transform: capitalize;
-        color: $grey;
+        color: $darkGray;
         &:hover {
-            border-bottom: 1px solid $grey;
+            border-bottom: 1px solid $darkGray;
         }
     }
     .lb_post-date {

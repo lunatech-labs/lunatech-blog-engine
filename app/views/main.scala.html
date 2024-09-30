@@ -9,34 +9,8 @@
             <!-- Cover -->
             <div class="cover">
                 <div class="cover__part">
-                    <p class="cover__subtitle">Our blog</p>
+                    <p class="cover__subtitle"><span>//</span>Our blog</p>
                     <h1 class="cover__title">Lunatech’s<br />engineer blog</h1>
-                </div>
-
-                <div class="slider">
-                    <div class="slider__group">
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char1.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char2.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char3.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char4.webp")"></div>
-
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char1.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char2.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char3.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char4.webp")"></div> 
-                    </div>
-
-                    <div class="slider__group">
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char5.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char6.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char7.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char8.webp")"></div>
-
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char5.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char6.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char7.webp")"></div>
-                        <div class="slider__person"><img class="slider__picture" src="@routes.Assets.versioned("images/char8.webp")"></div> 
-                    </div>
                 </div>
 
                 <div class="circle-group">
@@ -78,26 +52,6 @@
                     $("header").removeClass("scroll");
                 }
             });
-        </script>
-        <script>
-            var toTop = 0;
-            function autoPlay1() {
-                timer = setTimeout(function() {
-                    var row1 = document.getElementById('slider__group1');
-                    toTop = toTop - 128;
-
-                    if (toTop < -1152) {
-                        toTop = 0;
-                        clearTimeout(timer);
-                        row1.onmouseover = clearTimeout(timer);
-                    }
-
-                    row1.style.top = toTop +'px';
-                    autoPlay1();
-
-                }, 200);
-            }
-            autoPlay1();
         </script>
         <script>
             var toBottom = 0;
