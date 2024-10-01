@@ -49,7 +49,7 @@ class HomeController @Inject()(
       case None =>
         Future.successful(BadRequest("nothing in the cache"))
       case Some(result) =>
-        Future.successful(Ok(views.html.index(background, slicePosts(result, page), perPage)))
+        Future.successful(Ok(views.html.index(background, slicePosts(result, page), perPage, "")))
     }
   }
 
@@ -58,7 +58,7 @@ class HomeController @Inject()(
       case None =>
         Future.successful(BadRequest("nothing in the cache"))
       case Some(result) =>
-        Future.successful(Ok(views.html.index(background, result, -1)))
+        Future.successful(Ok(views.html.index(background, result, -1, name)))
     }
   }
 
@@ -67,7 +67,7 @@ class HomeController @Inject()(
       case None =>
         Future.successful(BadRequest("nothing in the cache"))
       case Some(result) =>
-        Future.successful(Ok(views.html.index(background, result, -1)))
+        Future.successful(Ok(views.html.index(background, result, -1, name)))
     }
   }
 

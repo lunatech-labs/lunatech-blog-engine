@@ -33,7 +33,7 @@ case class Post(slug: String, mainImage: String, content: String, author: Option
 
   lazy val lang: String = allCatch.opt(document.getAttributes.get("lang").toString).getOrElse("en")
 
-  lazy val tags: Option[Array[String]] = allCatch.opt(document.getAttributes.get("tags").toString.drop(1).dropRight(1).split(",") :+ lang)
+  lazy val tags: Option[Array[String]] = allCatch.opt(document.getAttributes.get("tags").toString.drop(1).dropRight(1).split(",").map(_.stripLeading) :+ lang)
 
   lazy val excerpt: String = Try(content.split("\n").toList
     .dropWhile(_.nonEmpty)
