@@ -18,8 +18,8 @@
         z-index: 1
     }
     &__subtitle {
-        font-size: 16px;
-        color: #8A8E9E;
+        font-size: $size-s;
+        color: $lightGray;
         text-transform: uppercase;
         letter-spacing: 4px;
         font-weight: 600;
