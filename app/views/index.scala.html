@@ -1,4 +1,4 @@
-@(headerImageUrl: String, posts: Seq[Post], blogsPerPage: Int)(implicit request: Request[AnyContent])
+@(headerImageUrl: String, posts: Seq[Post], blogsPerPage: Int, tagName: String)(implicit request: Request[AnyContent])
 @import org.joda.time.{DateTime, DateTimeZone}
 <script>
     function imgError(image) {
@@ -41,7 +41,7 @@
 @main(id = "blog", title = "Lunatech's engineer blog") {
     <section class="p80-0 bg-gray">
         <div class="wrapper-lg">
-            <h2>Latest articles</h2>
+            <h2>Latest articles - @tagName</h2>
             <p class="subtitle">Our most recent posts</p>
             <div class="grid">
                 <div class="featured">
@@ -56,7 +56,7 @@
         
     <section class="p80-0">
         <div class="wrapper-lg">
-            <h2>All blog posts</h2>
+            <h2>All blog posts - @tagName</h2>
             <p class="subtitle">Our different categories</p>
 
             <div class="tag-slider">
@@ -71,7 +71,7 @@
 
             @if(blogsPerPage != -1) {
                 <div class="flexbox jc-c mgt-64">
-                    <button class="btn btn__red" id="load">Load more</button>
+                    <button class="btn btn__primary" id="load">Load more</button>
                 </div>
             }
 

@@ -1,17 +1,17 @@
 #not-found {
     header {
-        background: $light-sand;
+        background: $white;
         padding: 16px 32px;
 
         svg .lb_path {
-            fill: $grey;
+            fill: $darkGray;
         }
 
         .lb_menu {
             ul {
                 li {
                     a {
-                        color: $grey;
+                        color: $darkGray;
                     }
                 }
             }
@@ -46,7 +46,7 @@
             }
 
             h1 {
-                color: #252322;
+                color: $darkGray;
                 margin-bottom: 0;
                 text-align: left;
             }
@@ -71,7 +71,7 @@
             left: 40px;
             height: 170px;
             width: 170px;
-            background-color: $bright-red;
+            background-color: $pink;
             border-radius: 50%;
             display: inline-block;
         }
@@ -79,7 +79,7 @@
         #circle {
             height: 450px;
             width: 450px;
-            border: 1px solid $bright-red;
+            border: 1px solid $pink;
             border-radius: 50%;
             display: inline-block;
         }

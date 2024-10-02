@@ -1,11 +1,10 @@
 .cover {
     @include flexbox;
     justify-content: space-between;
-    padding: 0 128px;
-    height: 784px;
+    padding: 160px 128px;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(-45deg, #000000, #272727, #000000, #292929);
+    background: linear-gradient(-90deg, $darkBlue, $mediumBlue, $mediumBlue, $darkBlue);
     background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
     @include tablet-landscape {
@@ -19,9 +18,16 @@
         z-index: 1
     }
     &__subtitle {
-        font-size: 32px;
-        color: white;
-        opacity: .5;
+        font-size: $size-s;
+        color: $lightGray;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 600;
+        span {
+            color: $pink;
+            margin-right: 8px;
+
+        }
         @include tablet-landscape {
             font-size: 28px;
         }
@@ -33,10 +39,11 @@
         }
     }
     &__title {
-        font-size: 96px;
-        font-weight: 500;
-        line-height: 112px;
         color: white;
+        font-size: 4rem;
+        line-height: 5rem;
+        font-weight: 700;
+        margin-bottom: 32px;
         @include tablet-landscape {
             font-size: 64px;
             line-height: 80px;

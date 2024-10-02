@@ -5,14 +5,14 @@ main {
     }
 }
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-size-base;
     font-weight: 400;
     color: #292929;
 }
 h2 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 600;
 }
 .subtitle {
     font-size: 16px;
