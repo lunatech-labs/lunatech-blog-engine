@@ -1,5 +1,6 @@
 logs
 .bsp
+.bloop
 conf/overrides.conf
 project/project
 project/target
