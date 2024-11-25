@@ -107,7 +107,7 @@ class ApplicationStart @Inject()(
               val authorName = post.authorName
               cache.get(authorName) match {
                 case None =>
-                  val getUser = Github(Option(accessToken)).users.get(authorName).execFuture[HttpResponse[String]]()
+                  val getUser = Github().users.get(authorName).execFuture[HttpResponse[String]]()
                   val postWithAuthor = getUser.map {
                     case Left(_) => p
                     case Right(rUser) =>
