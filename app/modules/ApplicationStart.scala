@@ -24,12 +24,11 @@ class ApplicationStart @Inject()(
                                   cache: SyncCacheApi
                                 ) {
 
-  private val accessToken = configuration.get[String]("accessToken")
   private val organization = configuration.get[String]("githubOrganisation")
   private val repository = configuration.get[String]("githubRepository")
   private val branch = configuration.get[String]("githubBranch")
 
-  private def getContents = Github(Option(accessToken)).repos.getContents(organization, repository, "posts", Option(branch)).execFuture[HttpResponse[String]]()
+  private def getContents = Github().repos.getContents(organization, repository, "posts", Option(branch)).execFuture[HttpResponse[String]]()
 
   {
     // Parse all and put into cache
@@ -108,7 +107,7 @@ class ApplicationStart @Inject()(
               val authorName = post.authorName
               cache.get(authorName) match {
                 case None =>
-                  val getUser = Github(Option(accessToken)).users.get(authorName).execFuture[HttpResponse[String]]()
+                  val getUser = Github().users.get(authorName).execFuture[HttpResponse[String]]()
                   val postWithAuthor = getUser.map {
                     case Left(_) => p
                     case Right(rUser) =>
