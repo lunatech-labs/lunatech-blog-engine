@@ -1,21 +1,18 @@
+package integration
 
 import org.scalatestplus.play.PlaySpec
 import org.scalatestplus.play.guice.GuiceOneServerPerSuite
-import play.api.libs.ws.WSClient
-import org.scalatest._
-import org.scalatestplus.play._
-
-import play.api.test._
-import play.api.test.Helpers.{GET => GET_REQUEST, _}
 import play.api.Application
 import play.api.inject.guice.GuiceApplicationBuilder
+import play.api.libs.ws.WSClient
+import play.api.test.Helpers._
 
 class SmokeTest extends PlaySpec with GuiceOneServerPerSuite {
 
   override def fakeApplication(): Application = {
     GuiceApplicationBuilder()
       .configure(
-        "accessToken" -> sys.env.get("GITHUB_TOKEN").getOrElse("dummy")
+        "accessToken" -> sys.env.getOrElse("GITHUB_TOKEN", "dummy")
       )
       .build()
   }
