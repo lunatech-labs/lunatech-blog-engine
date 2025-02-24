@@ -22,7 +22,7 @@ class ApplicationStart @Inject()(
                                   ws: WSClient,
                                   configuration: Configuration,
                                   cache: SyncCacheApi
-                                ) {
+                                ) extends Logging {
 
   private val accessToken = configuration.get[String]("accessToken")
   private val organization = configuration.get[String]("githubOrganisation")
@@ -33,19 +33,21 @@ class ApplicationStart @Inject()(
 
   {
     // Parse all and put into cache
-    println("loading posts…")
+    logger.info("loading posts…")
     val fPosts = getPosts()
-    fPosts.map { posts =>
-      cache.set("posts", posts)
-      println("posts loaded!")
-      // Construct our author cache
-      getPostByAuthor(posts).foreach { case (author, posts) =>
-        cache.set("author-" + author, posts)
-      }
+    fPosts.map {
+      case Left(error) => logger.error(error)
+      case Right(posts) =>
+        cache.set("posts", posts)
+        logger.info("posts loaded!")
+        // Construct our author cache
+        getPostByAuthor(posts).foreach { case (author, posts) =>
+          cache.set("author-" + author, posts)
+        }
 
-      getPostByTag(posts).map { case (tag, posts) =>
-        cache.set("tag-" + tag.trim, posts)
-      }
+        getPostByTag(posts).map { case (tag, posts) =>
+          cache.set("tag-" + tag.trim, posts)
+        }
     }
     Await.result(fPosts, 5 minutes)
   }
@@ -88,10 +90,8 @@ class ApplicationStart @Inject()(
     case Nil => map
   }
 
-  private def getPosts(page: Int = 1): Future[Seq[Post]] = getContents.flatMap {
-    case Left(e) =>
-      println(e.getMessage)
-      Future.successful(Seq.empty)
+  private def getPosts(page: Int = 1): Future[Either[String, Seq[Post]]] = getContents.flatMap {
+    case Left(e) => Future.successful(Left(e.getMessage))
     // Those are our blog post
     case Right(r) =>
       // Build our posts
@@ -142,7 +142,7 @@ class ApplicationStart @Inject()(
         posts
       }
       Future.sequence(posts).map { p =>
-        p.flatten
+        Right(p.flatten)
       }
   }
 }
