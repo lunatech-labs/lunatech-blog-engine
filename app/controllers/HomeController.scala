@@ -28,6 +28,7 @@ class HomeController @Inject()(
                                 cache: SyncCacheApi
                               ) extends AbstractController(cc) {
 
+  private val accessToken = configuration.get[String]("accessToken")
   private val organization = configuration.get[String]("githubOrganisation")
   private val repository = configuration.get[String]("githubRepository")
   private val branch = configuration.get[String]("githubBranch")
@@ -122,7 +123,7 @@ class HomeController @Inject()(
       } else {
         cache.get(post.authorName) match {
           case None =>
-            val getUser = Github().users.get(post.authorName).execFuture[HttpResponse[String]]()
+            val getUser = Github(Option(accessToken)).users.get(post.authorName).execFuture[HttpResponse[String]]()
             getUser.map {
               case Left(_) => Ok(views.html.post(post))
               case Right(re) =>
