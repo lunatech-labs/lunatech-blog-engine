@@ -24,3 +24,16 @@ You can modify the template in the `app/views/` directory.
 ## Starting the application 
 
 `sbt run` and go in your browser to `http:localhost:9000`
+
+# How to deploy a new version
+
+Merging your PR will update the `main` branch only. You'll need to deploy it first in 
+[Acceptance](https://blog.acceptance.lunatech.com/), and then in [Production](https://blog.lunatech.com/).
+
+You can do both with the help of GitHub Actions:
+* [Deploy Acceptance](https://github.com/lunatech-labs/lunatech-blog-engine/actions/workflows/deploy_acceptance.yaml)
+* [Deploy Production](https://github.com/lunatech-labs/lunatech-blog-engine/actions/workflows/deploy_production.yaml)
+
+For the time being, the blog engine needs to be manually restarted in clever cloud as well. Please ask your colleagues
+if you don't know how to do that.
+

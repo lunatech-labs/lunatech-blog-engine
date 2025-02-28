@@ -29,8 +29,6 @@ jobs:
           fetch-depth: '0'
 
       - name: Merge from ${{ inputs.source_branch }} to ${{ inputs.target_branch }}
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           git fetch origin
           git checkout ${{ inputs.target_branch }}
