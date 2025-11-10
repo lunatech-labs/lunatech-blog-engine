@@ -10,7 +10,7 @@ scalaVersion := "2.13.17"
 libraryDependencies ++= Seq(
   guice, ws, ehcache,
   "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.2" % Test,
-  "org.asciidoctor" % "asciidoctorj" % "3.0.0",
+  "org.asciidoctor" % "asciidoctorj" % "3.0.1",
   "com.47deg" %% "github4s" % "0.21.0",
 )
 
