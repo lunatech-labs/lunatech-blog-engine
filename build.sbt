@@ -14,4 +14,7 @@ libraryDependencies ++= Seq(
   "com.47deg" %% "github4s" % "0.21.0",
 )
 
+Pipeline / pipelineStages := Seq(digest)
+Assets / pipelineStages := Seq(digest)
+
 Global / onChangedBuildSource := ReloadOnSourceChanges
