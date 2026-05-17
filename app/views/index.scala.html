@@ -41,8 +41,8 @@
 @main(id = "blog", title = "Lunatech's engineer blog") {
     <section class="p80-0 bg-gray">
         <div class="wrapper-lg">
-            <h2>Latest articles - @tagName</h2>
-            <p class="subtitle">Our most recent posts</p>
+            <h2>Latest articles <em>&middot; @tagName</em></h2>
+            <p class="subtitle">The newest editions</p>
             <div class="grid">
                 <div class="featured">
                     @posts.maxByOption(_.publicationDate).map { post => @displayPost(post) }
@@ -56,8 +56,8 @@
         
     <section class="p80-0">
         <div class="wrapper-lg">
-            <h2>All blog posts - @tagName</h2>
-            <p class="subtitle">Our different categories</p>
+            <h2>The Collection <em>&middot; @tagName</em></h2>
+            <p class="subtitle">Browse the categories</p>
 
             <div class="tag-slider">
                 @mainTags.map {(tag:String) =>
@@ -71,7 +71,7 @@
 
             @if(blogsPerPage != -1) {
                 <div class="flexbox jc-c mgt-64">
-                    <button class="btn btn__primary" id="load">Load more</button>
+                    <button class="btn btn__primary" id="load">Discover more</button>
                 </div>
             }
 

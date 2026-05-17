@@ -1,19 +1,38 @@
 .footer {
-    background: $darkBlue;
-    color: white;
-    padding: 54px 128px;
+    background: $noir;
+    background-image:
+        radial-gradient(ellipse at top, rgba(201, 169, 97, 0.06), transparent 60%);
+    color: $ivory;
+    padding: 80px 128px 64px;
+    font-family: $font-sans;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $gold, transparent);
+    }
+
     @include tablet-landscape {
-        padding: 32px;
+        padding: 56px 32px 40px;
     }
     &__part {
         @include flexbox;
         justify-content: space-between;
         &:first-child {
-            border-bottom: 1px solid #ffffff4D;
-            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            padding-bottom: 40px;
         }
         &:last-child {
-            padding-top: 32px;
+            padding-top: 40px;
+            color: rgba(247, 242, 232, 0.6);
             @include phone {
                 flex-direction: column;
                 align-items: flex-start;

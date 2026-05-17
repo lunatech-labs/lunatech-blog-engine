@@ -1,49 +1,52 @@
 .circle-group {
     position: absolute;
-    left: 63%;
+    left: 62%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
     @include tablet-landscape {
-        left: 94%;
+        left: 88%;
     }
     @include phone {
-        left: 118%;
+        display: none;
     }
     &__xs {
-        border: 1px solid white;
-        width: 176px;
-        height: 176px;
-        opacity: .25;
+        border: 1px solid rgba(201, 169, 97, 0.35);
+        width: 160px;
+        height: 160px;
+        opacity: 0.7;
     }
     &__sm {
         width: 280px;
         height: 280px;
+        border: 1px solid rgba(201, 169, 97, 0.18);
         &:before {
             position: absolute;
             content: '';
-            height: 100%; 
-            width: 100%; 
-            border: 1px dashed $pink;
+            height: 100%;
+            width: 100%;
+            border: 1px dashed rgba(201, 169, 97, 0.4);
             border-radius: inherit;
-            animation: spin 30s linear infinite;
+            animation: spin 60s linear infinite;
         }
     }
     &__md {
-        border: 1px solid white;
-        width: 400px;
-        height: 400px;
-        opacity: .5;
+        border: 1px solid rgba(247, 242, 232, 0.08);
+        width: 420px;
+        height: 420px;
     }
     &__lg {
-        width: 544px;
-        height: 544px;
-        opacity: .75;
+        width: 560px;
+        height: 560px;
+        border: 1px solid rgba(247, 242, 232, 0.04);
         &:before {
             position: absolute;
             content: '';
-            height: 100%; 
-            width: 100%; 
-            border: 1px dashed white;
+            height: 100%;
+            width: 100%;
+            border: 1px dashed rgba(247, 242, 232, 0.12);
             border-radius: inherit;
-            animation: spin 50s linear infinite;
+            animation: spin 90s linear infinite reverse;
         }
     }
 }
@@ -55,8 +58,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-@keyframes spin { 
-    100% { 
-      transform: rotateZ(360deg); 
-    }
+@keyframes spin {
+    100% { transform: rotateZ(360deg); }
 }

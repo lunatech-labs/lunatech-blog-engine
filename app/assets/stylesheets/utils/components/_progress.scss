@@ -1,12 +1,13 @@
 #progress-display {
     position: fixed;
     width: 100%;
-    top: 80px;
+    top: 96px;
     left: 0;
     margin: 0;
     padding: 0;
-    background-color: #FFF;
+    background-color: transparent;
     display: none;
+    z-index: 10;
     @include phone {
         top: 0;
     }
@@ -16,17 +17,17 @@
     float: left;
     top: 0;
     left: 0;
-    height: 4px;
+    height: 2px;
     margin: 0;
     padding: 0;
 }
 #progress-over {
-    background-color: $pink;
+    background: linear-gradient(90deg, $goldDeep, $gold, $goldLight);
     width: 0%;
 }
 #progress-impend {
-    background-color: black;
-    opacity: .1;
+    background-color: $noir;
+    opacity: 0.08;
     width: 100%;
 }
 #progress-time {

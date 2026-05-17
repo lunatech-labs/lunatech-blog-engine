@@ -1,21 +1,57 @@
 main {
-    padding-top: 80px;
+    padding-top: 96px;
+    background: $pearl;
     @include phone {
         padding-top: 0;
     }
 }
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: $font-sans;
     font-size: $font-size-base;
     font-weight: 400;
-    color: #292929;
+    color: $noir;
+    background: $pearl;
+    letter-spacing: 0.01em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-display;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: $noir;
 }
 h2 {
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    @include phone {
+        font-size: 2rem;
+    }
 }
 .subtitle {
-    font-size: 16px;
-    color: #8d8d8d;
-    margin-bottom: 32px;
+    font-family: $font-sans;
+    font-size: 0.75rem;
+    color: $goldDeep;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+    margin-bottom: 56px;
+    display: inline-flex;
+    align-items: center;
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 1px;
+        background: $gold;
+        margin: 0 16px;
+        opacity: 0.6;
+    }
+    &::before {
+        margin-left: 0;
+    }
+}
+
+section h2 {
+    margin-bottom: 12px;
 }

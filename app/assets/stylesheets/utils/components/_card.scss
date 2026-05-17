@@ -1,21 +1,37 @@
 .card-list {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 32px;
+    grid-gap: 48px;
     @include phone {
-        grid-gap: 24px;
+        grid-gap: 32px;
     }
 }
 .card {
     grid-column: span 4;
     text-decoration: none;
-    transition: all .2s ease;
-    border-radius: 8px;
-    color: #292929;
-    background: white;
+    transition: all .5s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: $border-radius;
+    color: $noir;
+    background: $white;
     overflow: hidden;
-    box-shadow: 0 10px 21px rgba(173, 178, 197, .17);
-    -webkit-box-shadow: 0 10px 21px rgba(173, 178, 197, .17);
+    border: 1px solid $borderLight;
+    box-shadow: 0 1px 0 rgba(11, 11, 12, 0.04);
+    position: relative;
+
+    // Filet d'or au sommet, revele au survol
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, $gold, transparent);
+        transform: scaleX(0);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 2;
+    }
+
     @include tablet-landscape {
         grid-column: span 6;
     }
@@ -23,35 +39,30 @@
         grid-column: span 12;
     }
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, .08);
+        transform: translateY(-4px);
+        box-shadow: 0 24px 48px rgba(11, 11, 12, 0.08), 0 0 0 1px rgba(201, 169, 97, 0.25);
+        &::before { transform: scaleX(1); }
         .card__cover img {
-            -webkit-transform:scale(1.10); /* Safari et Chrome */
-            -moz-transform:scale(1.10); /* Firefox */
-            -ms-transform:scale(1.10); /* Internet Explorer 9 */
-            -o-transform:scale(1.10); /* Opera */
-            transform:scale(1.10);
+            transform: scale(1.06);
         }
+        .card__title { color: $goldDeep; }
     }
     &__cover {
-        height: 192px;
+        height: 240px;
         width: 100%;
         overflow: hidden;
-        background: white;
-        border-bottom: 1px solid #e7e7e7;
+        background: $cream;
+        border-bottom: 1px solid $borderLight;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            -webkit-transition: all 1s ease; /* Safari et Chrome */
-            -moz-transition: all 1s ease; /* Firefox */
-            -ms-transition: all 1s ease; /* Internet Explorer 9 */
-            -o-transition: all 1s ease; /* Opera */
-            transition: all 1s ease;
+            filter: saturate(0.92);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
     }
     &__infos {
-        padding: 24px;
+        padding: 32px 28px 28px;
     }
     &__avatar-lg {
         height: 80px;
@@ -61,36 +72,33 @@
     }
     &__author-lg {
         font-size: 16px;
-        color: #292929;
-        opacity: 0.5;
+        color: $darkGray;
         text-decoration: none;
-        &:hover {
-            opacity: 1;
-        }
+        &:hover { color: $goldDeep; }
     }
     &__tag {
         .tag {
-            transition: all .5s ease;
+            transition: all .4s ease;
             &:hover {
-                -webkit-transform: scale(1.10); /* Safari et Chrome */
-                -moz-transform: scale(1.10); /* Firefox */
-                -ms-transform: scale(1.10); /* Internet Explorer 9 */
-                -o-transform: scale(1.10); /* Opera */
-                transform: scale(1.10);
+                background: $noir;
+                color: $goldLight;
             }
         }
     }
     &__title {
-        color: black;
-        font-size: 24px;
-        font-weight: 700;
+        font-family: $font-display;
+        color: $noir;
+        font-size: 1.625rem;
+        font-weight: 500;
         margin: 16px 0;
-        line-height: 32px;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        transition: color 0.3s ease;
     }
 }
 .featured {
@@ -99,19 +107,24 @@
         grid-column: span 12;
     }
     .card {
-        border: 1px solid #d5d5d5;
+        border: 1px solid $borderLight;
         padding: 24px;
         display: flex;
         flex-direction: column;
+        background: $white;
         &__infos {
-            padding: 0;
-            padding-top: 24px;
+            padding: 32px 8px 8px;
         }
         &__cover {
-            height: 320px;
+            height: 380px;
+            border-radius: $border-radius;
             @include phone {
-                height: 200px;
+                height: 220px;
             }
+        }
+        &__title {
+            font-size: 2.25rem;
+            @include phone { font-size: 1.75rem; }
         }
     }
 }
@@ -126,44 +139,44 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &:hover {
-            box-shadow: none;
-        }
         @include phone {
             flex-direction: column;
         }
         &__cover {
-            width: 260px;
-            height: 160px;
-            border-right: 1px solid #e7e7e7;
+            width: 240px;
+            height: 180px;
+            border-right: 1px solid $borderLight;
+            border-bottom: none;
             @include tablet-landscape {
-                width: 110px;
-                height: 158px;
+                width: 140px;
+                height: 180px;
             }
             @include tablet-portrait {
                 width: 50%;
-                height: 140px;
+                height: 160px;
             }
             @include phone {
                 width: 100%;
                 margin-right: 0;
-                margin-bottom: 24px;
+                margin-bottom: 0;
+                border-right: none;
+                border-bottom: 1px solid $borderLight;
             }
         }
         &__infos {
-            padding: 16px 15px;
-            width: calc(100% - 260px);
+            padding: 24px 28px;
+            width: calc(100% - 240px);
             @include tablet-landscape {
-                width: calc(100% - 134px);
+                width: calc(100% - 140px);
             }
             @include phone {
                 width: 100%;
             }
         }
         &__title {
-            font-size: 18px;
-            margin: 8px 0;
-            line-height: 24px;
+            font-size: 1.25rem;
+            margin: 12px 0;
+            line-height: 1.3;
         }
     }
 }

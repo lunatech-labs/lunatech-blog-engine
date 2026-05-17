@@ -1,48 +1,63 @@
 .btn {
     @include flexbox;
     justify-content: center;
-    height: 40px;
-    font-weight: 500;
-    padding: 0 32px;
-    border-radius: 4px;
+    height: 48px;
+    font-family: $font-sans;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 0 36px;
+    border-radius: 0;
     cursor: pointer;
     border: none;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
 .btn__primary {
-    color: $white;
-    background: $pink;
+    color: $noir;
+    background: $gold;
+    border: 1px solid $gold;
     &:hover {
-        color: $white;
+        color: $ivory;
         text-decoration: none;
-        background: $darkPink;
+        background: $noir;
+        border-color: $noir;
     }
 }
 .btn__secondary {
-    color: white;
-    background: none;
-    border: 1px solid #8d8d8d;
+    color: $ivory;
+    background: transparent;
+    border: 1px solid rgba(247, 242, 232, 0.4);
     &:hover {
-        color: $white;
+        color: $noir;
         text-decoration: none;
-        background: #61D500;
+        background: $gold;
+        border-color: $gold;
     }
 }
 .scroll-up {
     position: fixed;
-    bottom: 32px;
-    right: 32px;
-    display: flex;
-    font-size: 32px;
-    cursor: pointer;
+    bottom: 40px;
+    right: 40px;
     display: none;
+    font-size: 24px;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
-    background: white;
-    border-radius: 4px;
-    border: 1px solid #e7e7e7;
-    padding: 7px;
+    background: $noir;
+    color: $gold;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s ease;
+    &:hover {
+        background: $gold;
+        color: $noir;
+    }
     @include phone {
         display: none!important;
     }

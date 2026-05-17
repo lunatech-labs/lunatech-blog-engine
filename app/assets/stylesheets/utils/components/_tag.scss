@@ -1,19 +1,44 @@
 .tag-slider {
     display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 40px;
+    gap: 12px;
+    .tag {
+        background: transparent;
+        border: 1px solid rgba(11, 11, 12, 0.2);
+        color: $noir;
+        height: 36px;
+        padding: 0 20px;
+        font-size: 0.7rem;
+        &:hover {
+            border-color: $gold;
+            color: $goldDeep;
+            background: rgba(201, 169, 97, 0.06);
+        }
+    }
 }
 .tag {
     @include flexbox;
-    border-radius: 4px;
-    font-size: 12px;
-    padding: 0 8px;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    height: 20px;
-    color: #858585;
-    text-transform: capitalize;
+    border-radius: 0;
+    font-family: $font-sans;
+    font-size: 0.65rem;
+    padding: 0 12px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    height: 24px;
+    color: $goldDeep;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
     white-space: nowrap;
-    background: #f6f6f6;
+    background: transparent;
+    border: 1px solid rgba(201, 169, 97, 0.4);
     text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+        background: $gold;
+        color: $noir;
+        border-color: $gold;
+    }
 }

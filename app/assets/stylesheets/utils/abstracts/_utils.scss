@@ -2,17 +2,22 @@
 .flexbox {@include flexbox;}
 .ff-wrap {
     flex-flow: wrap;
-    height: 20px;
+    height: auto;
     overflow: hidden;
 }
 .jc-c {justify-content: center;}
 
 // Space
 .mgt-64 {margin-top: 64px;}
-.p80-0 {padding: 80px 0;}
+.p80-0 {padding: 120px 0;}
 
 // Colors
-.bg-gray {background: #f5f5f7;}
+.bg-gray {
+    background: $pearl;
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(201, 169, 97, 0.04), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(201, 169, 97, 0.04), transparent 40%);
+}
 
 // Others
 .d-none {display: none!important;}

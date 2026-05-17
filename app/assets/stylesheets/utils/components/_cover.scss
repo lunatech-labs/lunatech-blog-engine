@@ -1,72 +1,87 @@
 .cover {
     @include flexbox;
     justify-content: space-between;
-    padding: 160px 128px;
+    padding: 200px 128px 220px;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(-90deg, $darkBlue, $mediumBlue, $mediumBlue, $darkBlue);
-    background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+    background: $noir;
+    background-image:
+        radial-gradient(ellipse at 25% 30%, rgba(201, 169, 97, 0.18), transparent 55%),
+        radial-gradient(ellipse at 80% 80%, rgba(107, 31, 42, 0.18), transparent 55%),
+        linear-gradient(135deg, $noir 0%, $noirSoft 50%, $noir 100%);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 64px;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $gold, transparent);
+    }
+
     @include tablet-landscape {
-        padding: 0 64px;
-        height: 500px;
+        padding: 140px 64px 160px;
+        min-height: 520px;
     }
     @include phone {
-        padding: 0 24px;
+        padding: 96px 24px 120px;
     }
     &__part {
-        z-index: 1
+        z-index: 1;
+        max-width: 720px;
     }
     &__subtitle {
-        font-size: $size-s;
-        color: $lightGray;
+        font-family: $font-sans;
+        font-size: 0.75rem;
+        color: $goldLight;
         text-transform: uppercase;
-        letter-spacing: 4px;
-        font-weight: 600;
+        letter-spacing: 0.4em;
+        font-weight: 400;
+        margin-bottom: 40px;
+        display: inline-flex;
+        align-items: center;
         span {
-            color: $pink;
-            margin-right: 8px;
-
+            color: $gold;
+            margin-right: 16px;
+            letter-spacing: 0.2em;
+            font-size: 0.875rem;
         }
-        @include tablet-landscape {
-            font-size: 28px;
-        }
-        @include tablet-portrait {
-            font-size: 26px;
-        }
-        @include phone {
-            font-size: 24px;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 1px;
+            background: $gold;
+            margin-left: 20px;
+            opacity: 0.7;
         }
     }
     &__title {
-        color: white;
-        font-size: 4rem;
-        line-height: 5rem;
-        font-weight: 700;
+        font-family: $font-display;
+        color: $ivory;
+        font-size: 5.5rem;
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: -0.02em;
         margin-bottom: 32px;
         @include tablet-landscape {
-            font-size: 64px;
-            line-height: 80px;
+            font-size: 4.5rem;
         }
         @include tablet-portrait {
-            font-size: 54px;
-            line-height: 64px;
+            font-size: 3.5rem;
         }
         @include phone {
-            font-size: 56px;
-            line-height: 64px;
+            font-size: 2.75rem;
+            line-height: 1.1;
         }
     }
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }

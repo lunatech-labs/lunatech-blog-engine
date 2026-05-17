@@ -1,13 +1,26 @@
 .social {
     @include flexbox;
+    gap: 8px;
     &__link {
-        margin-left: 16px;
-        opacity: .8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(201, 169, 97, 0.3);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        opacity: 0.85;
         &:hover {
             opacity: 1;
+            border-color: $gold;
+            background: rgba(201, 169, 97, 0.1);
+            transform: translateY(-2px);
         }
         img {
-            height: 16px;
+            height: 14px;
+            filter: brightness(0) invert(0.95);
         }
     }
 }

@@ -1,20 +1,25 @@
 .logo-full {
     margin-right: 32px;
-    height: 32px;
+    height: 28px;
     @include tablet-portrait {
-        height: 24px;
+        height: 22px;
     }
 }
 .logo-letter {
-    height: 16px;
+    height: 18px;
 }
 .logo-visual {
     height: 40px;
     margin-left: 16px;
+    opacity: 0.85;
 }
 .logo-full, .logo-letter, .logo-visual {
     display: flex;
+    transition: opacity 0.3s ease;
     img {
         height: 100%;
+    }
+    &:hover {
+        opacity: 1;
     }
 }

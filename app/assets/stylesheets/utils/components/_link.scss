@@ -1,8 +1,10 @@
 .link {
     text-decoration: none;
-    color: white;
-    opacity: .8;
+    color: $ivory;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, color 0.3s ease;
     &:hover {
         opacity: 1;
+        color: $goldLight;
     }
 }

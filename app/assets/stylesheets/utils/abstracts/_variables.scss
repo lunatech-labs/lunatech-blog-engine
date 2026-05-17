@@ -1,43 +1,74 @@
-// Colors
-$lightBlue: #78B4D7;
-$blue: #0E2B71;
-$mediumBlue: #0A1E50;
-$darkBlue: #061332;
-$bgMediumBlue: #081840;
-$bgDarkBlue: #091B49;
-$pink: #DB2777;
-$darkPink: #bb2267;
-$red: #E62832;
-$mediumRed: #AE1920;
-$darkRed: #9B1919;
-$white: #FFFFFF;
-$lightGray: #c5c5c5;
-$darkGray: #4A4A4A;
-$border: #E7E7E7;
+// === Luxury 5-star palette ===
+// Noirs profonds
+$noir:          #0B0B0C;
+$noirSoft:      #141416;
+$noirCard:      #1A1A1D;
+$charcoal:      #2A2A2E;
 
-// Fonts
-$font-size-small: 0.75rem;     /* 12px */
-$font-size-base: 1rem;         /* 16px, base */
-$font-size-medium: 1.0625rem;  /* 17px */
-$font-size-large: 1.25rem;     /* 20px */
-$font-size-xlarge: 1.375rem;   /* 22px */
-$font-size-xxlarge: 1.5rem;    /* 24px */
-$font-size-heading: 2.5rem;    /* 40px */
-$font-size-hero: 4rem;         /* 64px */
+// Ivoires et cremes
+$ivory:         #F7F2E8;
+$cream:         #EFE6D2;
+$pearl:         #FBF8F1;
 
-// Border
-$border-radius: 8px;
+// Or champagne (accent principal)
+$gold:          #C9A961;
+$goldLight:     #E0C896;
+$goldDeep:      #A98847;
+$champagne:     #D4B87A;
 
-// Size
+// Bordeaux (accent secondaire)
+$bordeaux:      #6B1F2A;
+$bordeauxDeep:  #4A1620;
+
+// Neutres
+$white:         #FFFFFF;
+$lightGray:     #BDB7AA;
+$darkGray:      #54504A;
+$border:        #2B2823;
+$borderLight:   #E1D9C7;
+
+// === Legacy color aliases (kept for backwards compatibility) ===
+$lightBlue:     $goldLight;
+$blue:          $noir;
+$mediumBlue:    $noirSoft;
+$darkBlue:      $noir;
+$bgMediumBlue:  $noirSoft;
+$bgDarkBlue:    $noir;
+$pink:          $gold;
+$darkPink:      $goldDeep;
+$red:           $bordeaux;
+$mediumRed:     $bordeauxDeep;
+$darkRed:       $bordeauxDeep;
+
+// === Typography ===
+$font-serif:      'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+$font-display:    'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+$font-sans:       'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-mono:       'JetBrains Mono', 'SF Mono', monospace;
+
+$font-size-small:   0.75rem;
+$font-size-base:    1rem;
+$font-size-medium:  1.0625rem;
+$font-size-large:   1.25rem;
+$font-size-xlarge:  1.375rem;
+$font-size-xxlarge: 1.5rem;
+$font-size-heading: 2.75rem;
+$font-size-hero:    5rem;
+
+// === Border ===
+$border-radius:     2px;
+$border-radius-lg:  4px;
+
+// === Sizing ===
 $size-xs: 8px;
-$size-s: 16px;
+$size-s:  16px;
 $size-md: 32px;
 $size-lg: 64px;
 $size-xl: 128px;
 
-// Space
+// === Spacing ===
 $space-xs: 8px;
-$space-s: 16px;
+$space-s:  16px;
 $space-md: 32px;
 $space-lg: 64px;
 $space-xl: 128px;
