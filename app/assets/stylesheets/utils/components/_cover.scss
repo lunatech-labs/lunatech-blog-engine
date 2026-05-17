@@ -6,10 +6,10 @@
     position: relative;
     background: $noir;
     background-image:
-        radial-gradient(ellipse at 25% 30%, rgba(201, 169, 97, 0.18), transparent 55%),
+        radial-gradient(ellipse at 25% 30%, rgba(122, 36, 54, 0.18), transparent 55%),
         radial-gradient(ellipse at 80% 80%, rgba(107, 31, 42, 0.18), transparent 55%),
         linear-gradient(135deg, $noir 0%, $noirSoft 50%, $noir 100%);
-    border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+    border-bottom: 1px solid rgba(122, 36, 54, 0.2);
 
     &::after {
         content: "";

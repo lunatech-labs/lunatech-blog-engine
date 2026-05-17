@@ -43,7 +43,7 @@ article {
     a {
         color: $goldDeep;
         text-decoration: none;
-        border-bottom: 1px solid rgba(201, 169, 97, 0.4);
+        border-bottom: 1px solid rgba(122, 36, 54, 0.4);
         transition: all 0.3s ease;
         &:hover {
             color: $bordeaux;
@@ -180,7 +180,7 @@ article {
         width: initial;
         border-radius: 2px;
         margin: 2px 0;
-        border: 1px solid rgba(201, 169, 97, 0.2);
+        border: 1px solid rgba(122, 36, 54, 0.2);
     }
     @include phone {
         .videoblock iframe {

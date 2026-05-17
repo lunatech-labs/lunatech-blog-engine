@@ -1,7 +1,7 @@
 .footer {
     background: $noir;
     background-image:
-        radial-gradient(ellipse at top, rgba(201, 169, 97, 0.06), transparent 60%);
+        radial-gradient(ellipse at top, rgba(122, 36, 54, 0.06), transparent 60%);
     color: $ivory;
     padding: 80px 128px 64px;
     font-family: $font-sans;
@@ -27,7 +27,7 @@
         @include flexbox;
         justify-content: space-between;
         &:first-child {
-            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            border-bottom: 1px solid rgba(122, 36, 54, 0.2);
             padding-bottom: 40px;
         }
         &:last-child {
