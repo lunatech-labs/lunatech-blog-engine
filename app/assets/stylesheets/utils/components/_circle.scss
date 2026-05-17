@@ -11,7 +11,7 @@
         display: none;
     }
     &__xs {
-        border: 1px solid rgba(122, 36, 54, 0.35);
+        border: 1px solid rgba(201, 169, 97, 0.35);
         width: 160px;
         height: 160px;
         opacity: 0.7;
@@ -19,13 +19,13 @@
     &__sm {
         width: 280px;
         height: 280px;
-        border: 1px solid rgba(122, 36, 54, 0.18);
+        border: 1px solid rgba(201, 169, 97, 0.18);
         &:before {
             position: absolute;
             content: '';
             height: 100%;
             width: 100%;
-            border: 1px dashed rgba(122, 36, 54, 0.4);
+            border: 1px dashed rgba(201, 169, 97, 0.4);
             border-radius: inherit;
             animation: spin 60s linear infinite;
         }

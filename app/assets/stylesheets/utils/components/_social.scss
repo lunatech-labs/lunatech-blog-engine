@@ -8,14 +8,14 @@
         margin-left: 12px;
         width: 40px;
         height: 40px;
-        border: 1px solid rgba(122, 36, 54, 0.3);
+        border: 1px solid rgba(201, 169, 97, 0.3);
         border-radius: 50%;
         transition: all 0.3s ease;
         opacity: 0.85;
         &:hover {
             opacity: 1;
             border-color: $gold;
-            background: rgba(122, 36, 54, 0.1);
+            background: rgba(201, 169, 97, 0.1);
             transform: translateY(-2px);
         }
         img {
